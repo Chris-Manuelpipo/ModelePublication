@@ -49,7 +49,7 @@
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 25,
+				"line" : 26,
 				"parent" : 0
 			},
 			{
@@ -177,7 +177,7 @@
 			{
 				"command" : 9,
 				"file" : 0,
-				"line" : 24,
+				"line" : 25,
 				"parent" : 0
 			}
 		]
@@ -262,7 +262,8 @@
 				1,
 				2,
 				3,
-				4
+				4,
+				9
 			]
 		}
 	],
@@ -334,7 +335,8 @@
 				1,
 				2,
 				3,
-				4
+				4,
+				9
 			]
 		},
 		{
@@ -342,21 +344,23 @@
 			"sourceIndexes" : 
 			[
 				5,
-				7
+				6,
+				8
 			]
 		},
 		{
 			"name" : "Header Files",
 			"sourceIndexes" : 
 			[
-				6
+				7
 			]
 		},
 		{
 			"name" : "CMake Rules",
 			"sourceIndexes" : 
 			[
-				8
+				10,
+				11
 			]
 		}
 	],
@@ -399,6 +403,11 @@
 			"sourceGroupIndex" : 1
 		},
 		{
+			"backtrace" : 1,
+			"path" : "ressources.qrc",
+			"sourceGroupIndex" : 1
+		},
+		{
 			"backtrace" : 0,
 			"isGenerated" : true,
 			"path" : "build/Desktop-Debug/ModelePublicationn_autogen/include/ui_mainwindow.h",
@@ -412,8 +421,21 @@
 		},
 		{
 			"backtrace" : 0,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop-Debug/ModelePublicationn_autogen/EWIEGA46WW/qrc_ressources.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 0,
 			"isGenerated" : true,
 			"path" : "build/Desktop-Debug/ModelePublicationn_autogen/timestamp.rule",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop-Debug/ModelePublicationn_autogen/EWIEGA46WW/qrc_ressources.cpp.rule",
 			"sourceGroupIndex" : 3
 		}
 	],

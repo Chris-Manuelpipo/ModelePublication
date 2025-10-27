@@ -20,7 +20,8 @@ set(PROJECT_SOURCES
     mainwindow.ui
 )
 
-add_executable(ModelePublicationn ${PROJECT_SOURCES})
+add_executable(ModelePublicationn ${PROJECT_SOURCES}
+    ressources.qrc)
 target_include_directories(ModelePublicationn PRIVATE include)
 target_link_libraries(ModelePublicationn PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
 

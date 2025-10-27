@@ -31,7 +31,7 @@ struct qt_meta_stringdata_MainWindow_t {
     char stringdata1[22];
     char stringdata2[1];
     char stringdata3[24];
-    char stringdata4[24];
+    char stringdata4[23];
     char stringdata5[26];
     char stringdata6[27];
 };
@@ -43,15 +43,15 @@ Q_CONSTINIT static const qt_meta_stringdata_MainWindow_t qt_meta_stringdata_Main
         QT_MOC_LITERAL(11, 21),  // "on_btnPublier_clicked"
         QT_MOC_LITERAL(33, 0),  // ""
         QT_MOC_LITERAL(34, 23),  // "on_btnSupprimer_clicked"
-        QT_MOC_LITERAL(58, 23),  // "on_btnMoodifier_clicked"
-        QT_MOC_LITERAL(82, 25),  // "on_btnSauvegarder_clicked"
-        QT_MOC_LITERAL(108, 26)   // "on_btnResetFiltres_clicked"
+        QT_MOC_LITERAL(58, 22),  // "on_btnModifier_clicked"
+        QT_MOC_LITERAL(81, 25),  // "on_btnSauvegarder_clicked"
+        QT_MOC_LITERAL(107, 26)   // "on_btnResetFiltres_clicked"
     },
     "MainWindow",
     "on_btnPublier_clicked",
     "",
     "on_btnSupprimer_clicked",
-    "on_btnMoodifier_clicked",
+    "on_btnModifier_clicked",
     "on_btnSauvegarder_clicked",
     "on_btnResetFiltres_clicked"
 };
@@ -101,7 +101,7 @@ Q_CONSTINIT const QMetaObject MainWindow::staticMetaObject = { {
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'on_btnSupprimer_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        // method 'on_btnMoodifier_clicked'
+        // method 'on_btnModifier_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'on_btnSauvegarder_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
@@ -119,7 +119,7 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         switch (_id) {
         case 0: _t->on_btnPublier_clicked(); break;
         case 1: _t->on_btnSupprimer_clicked(); break;
-        case 2: _t->on_btnMoodifier_clicked(); break;
+        case 2: _t->on_btnModifier_clicked(); break;
         case 3: _t->on_btnSauvegarder_clicked(); break;
         case 4: _t->on_btnResetFiltres_clicked(); break;
         default: ;

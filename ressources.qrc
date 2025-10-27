@@ -1,0 +1,13 @@
+<RCC>
+    <qresource prefix="/new/prefix1">
+        <file>icons/bouton-supprimer.png</file>
+        <file>icons/modification-au-crayon.png</file>
+        <file>icons/sauvegarde.png</file>
+        <file>icons/sauvegarder.png</file>
+        <file>icons/suppression.png</file>
+        <file>style.qss</file>
+        <file>icons/arrow-up.png</file>
+        <file>icons/coche.png</file>
+        <file>icons/trash.png</file>
+    </qresource>
+</RCC>

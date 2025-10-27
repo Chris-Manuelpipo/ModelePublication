@@ -1,0 +1,31 @@
+{
+	"BUILD_DIR" : "/home/chris-manuel/Bureau/ModelePublicationn/build/ModelePublicationn_autogen",
+	"CMAKE_BINARY_DIR" : "/home/chris-manuel/Bureau/ModelePublicationn/build",
+	"CMAKE_CURRENT_BINARY_DIR" : "/home/chris-manuel/Bureau/ModelePublicationn/build",
+	"CMAKE_CURRENT_SOURCE_DIR" : "/home/chris-manuel/Bureau/ModelePublicationn",
+	"CMAKE_SOURCE_DIR" : "/home/chris-manuel/Bureau/ModelePublicationn",
+	"GENERATOR" : "Unix Makefiles",
+	"INCLUDE_DIR" : "/home/chris-manuel/Bureau/ModelePublicationn/build/ModelePublicationn_autogen/include",
+	"INPUTS" : 
+	[
+		"/home/chris-manuel/Bureau/ModelePublicationn/style.qss",
+		"/home/chris-manuel/Bureau/ModelePublicationn/icons/coche.png",
+		"/home/chris-manuel/Bureau/ModelePublicationn/icons/arrow-up.png",
+		"/home/chris-manuel/Bureau/ModelePublicationn/icons/sauvegarder.png",
+		"/home/chris-manuel/Bureau/ModelePublicationn/icons/sauvegarde.png",
+		"/home/chris-manuel/Bureau/ModelePublicationn/icons/modification-au-crayon.png",
+		"/home/chris-manuel/Bureau/ModelePublicationn/icons/suppression.png",
+		"/home/chris-manuel/Bureau/ModelePublicationn/icons/trash.png",
+		"/home/chris-manuel/Bureau/ModelePublicationn/icons/bouton-supprimer.png"
+	],
+	"LOCK_FILE" : "/home/chris-manuel/Bureau/ModelePublicationn/build/CMakeFiles/ModelePublicationn_autogen.dir/AutoRcc_ressources_EWIEGA46WW_Lock.lock",
+	"MULTI_CONFIG" : false,
+	"OPTIONS" : [ "-name", "ressources" ],
+	"OUTPUT_CHECKSUM" : "EWIEGA46WW",
+	"OUTPUT_NAME" : "qrc_ressources.cpp",
+	"RCC_EXECUTABLE" : "/usr/lib/qt6/libexec/rcc",
+	"RCC_LIST_OPTIONS" : [ "--list" ],
+	"SETTINGS_FILE" : "/home/chris-manuel/Bureau/ModelePublicationn/build/CMakeFiles/ModelePublicationn_autogen.dir/AutoRcc_ressources_EWIEGA46WW_Used.txt",
+	"SOURCE" : "/home/chris-manuel/Bureau/ModelePublicationn/ressources.qrc",
+	"VERBOSITY" : 0
+}

@@ -829,6 +829,9 @@
 		{
 			"isExternal" : true,
 			"path" : "/usr/lib/x86_64-linux-gnu/cmake/Qt6Widgets/Qt6WidgetsMacros.cmake"
+		},
+		{
+			"path" : "ressources.qrc"
 		}
 	],
 	"kind" : "cmakeFiles",

@@ -12,6 +12,7 @@ private:
 public:
     bool publier(const Ressource& res); //Fonction de publication; ajoute la place à la liste de places
     bool retirer(int id); // Supprimer une place par son id
+    bool modifier(int id, const Ressource &nouvelle);
     Ressource* rechercher(int id);// Rechercher une ressource et simuler la reservation
     void afficherToutes() const;// Afficher/litser toutes places publiées
     std::vector<Ressource*> chercher(const std::string& section, const std::string& rangee) const;// Méthode pour rechercher une place particulière

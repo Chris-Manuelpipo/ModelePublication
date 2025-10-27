@@ -197,7 +197,8 @@
 		"/usr/lib/x86_64-linux-gnu/cmake/Qt6Widgets/Qt6WidgetsTargets-none.cmake",
 		"/usr/lib/x86_64-linux-gnu/cmake/Qt6Widgets/Qt6WidgetsAdditionalTargetInfo.cmake",
 		"/usr/lib/x86_64-linux-gnu/cmake/Qt6Widgets/Qt6WidgetsVersionlessTargets.cmake",
-		"/usr/lib/x86_64-linux-gnu/cmake/Qt6Widgets/Qt6WidgetsMacros.cmake"
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt6Widgets/Qt6WidgetsMacros.cmake",
+		"/home/chris-manuel/Bureau/ModelePublicationn/ressources.qrc"
 	],
 	"CMAKE_SOURCE_DIR" : "/home/chris-manuel/Bureau/ModelePublicationn",
 	"DEP_FILE" : "/home/chris-manuel/Bureau/ModelePublicationn/build/Desktop-Debug/ModelePublicationn_autogen/deps",

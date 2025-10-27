@@ -49,6 +49,20 @@ bool Publication::retirer(int id) {
     return false;
 }
 
+bool Publication::modifier(int id, const Ressource &nouvelle) {
+    for (auto &r : ressources) {
+        if (r.getId() == id) {
+            r.setSection(nouvelle.getSection());
+            r.setRangee(nouvelle.getRangee());
+            r.setSiege(nouvelle.getSiege());
+            r.setPrix(nouvelle.getPrix());
+            return true;
+        }
+    }
+    return false;
+}
+
+
 Ressource* Publication::rechercher(int id) {
     for (auto& res : ressources) {
         if (res.getId() == id) return &res;

@@ -9,6 +9,7 @@ ModelePublicationn_autogen/timestamp: \
 	/home/chris-manuel/Bureau/ModelePublicationn/main.cpp \
 	/home/chris-manuel/Bureau/ModelePublicationn/mainwindow.cpp \
 	/home/chris-manuel/Bureau/ModelePublicationn/mainwindow.h \
+	/home/chris-manuel/Bureau/ModelePublicationn/ressources.qrc \
 	/home/chris-manuel/Bureau/ModelePublicationn/src/Publication.cpp \
 	/home/chris-manuel/Bureau/ModelePublicationn/src/Ressource.cpp \
 	/usr/include/alloca.h \

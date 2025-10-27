@@ -1,0 +1,12 @@
+build/Desktop-Debug/CMakeFiles/3.28.3/CompilerIdCXX/CMakeCXXCompilerId.cpp
+build/Desktop-Debug/ModelePublicationn_autogen/EWIEGA46WW/moc_mainwindow.cpp
+build/Desktop-Debug/ModelePublicationn_autogen/include/ui_mainwindow.h
+build/Desktop-Debug/ModelePublicationn_autogen/moc_predefs.h
+build/Desktop-Debug/ModelePublicationn_autogen/mocs_compilation.cpp
+include/Publication.hpp
+include/Ressource.hpp
+main.cpp
+mainwindow.cpp
+mainwindow.h
+src/Publication.cpp
+src/Ressource.cpp

@@ -17,7 +17,6 @@ MainWindow::MainWindow(QWidget *parent)
     rafraichirTableau();
 
 }
-
 MainWindow::~MainWindow() {
     delete ui;
 }
@@ -136,7 +135,29 @@ void MainWindow::on_btnResetFiltres_clicked() {
     filtrerTableau();
 }
 
-void MainWindow::on_btnMoodifier_clicked(){
+void MainWindow::on_btnModifier_clicked(){
+
+    int selected = ui->tableRessources->currentRow();
+
+    if (selected < 0) {
+        QMessageBox::warning(this, "Aucune sélection", "Veuillez sélectionner une ressource à modifier !");
+        return;
+    }
+
+    // On récupère les données de la ligne sélectionnée
+    idEnCours = ui->tableRessources->item(selected, 0)->text().toInt();
+    QString section = ui->tableRessources->item(selected, 1)->text();
+    QString rangee  = ui->tableRessources->item(selected, 2)->text();
+    QString siege   = ui->tableRessources->item(selected, 3)->text();
+    QString prix    = ui->tableRessources->item(selected, 4)->text();
+
+    //On remplit les champs
+    ui->inputSection->setText(section);
+    ui->inputRangee->setText(rangee);
+    ui->inputSiege->setText(siege);
+    ui->inputPrix->setText(prix);
+
+    QMessageBox::information(this, "Mode modification", "Modifiez les champs puis appuyez sur Publier pour valider.");
 
 };
 
@@ -163,9 +184,36 @@ void MainWindow::on_btnPublier_clicked() {
     }
 
     Ressource res(section.toStdString(), rangee.toStdString(), siege, prix);
-    if (gestionnaire.publier(res)) {
-        rafraichirTableau();
+
+    //Gérer la modification des ressources
+
+    if (idEnCours == -1) {
+        //Mode ajout
+        if (gestionnaire.publier(res)) {
+            rafraichirTableau();
+        }else{
+            QMessageBox::information(this, "Information", "Cette place a déjà été publiée !");
+        }
     }
+    //Modification
+
+    else {
+        //Mode modification
+        if (gestionnaire.modifier(idEnCours, res)) {
+            rafraichirTableau();
+            QMessageBox::information(this, "Modifié", "La place a été mise à jour !");
+            idEnCours = -1; // Reset du mode modification
+        }else {
+            QMessageBox::warning(this, "Erreur", "La modification a échoué !");
+        }
+    }
+
+
+    // On vide les champs après action
+    ui->inputSection->clear();
+    ui->inputRangee->clear();
+    ui->inputSiege->clear();
+    ui->inputPrix->clear();
 }
 
 //Fonction pour supprimer une place
@@ -199,7 +247,7 @@ void MainWindow::on_btnSupprimer_clicked() {
 
 //Fonction pour sauvegarder la publication dans le fichier places.txt
 
-void MainWindow::on_btnSauvegarder_clicked() {
+void MainWindow::on_btnSauvegarder_clicked(){
     if (gestionnaire.sauvegarder("places.txt")) {
         QMessageBox::information(this, "Succès", "Données sauvegardées !");
     }
