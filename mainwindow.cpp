@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
 #include <QMessageBox>
+#include "clientwindow.h" //Pour mettre à jour les filtres après publication
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent), ui(new Ui::MainWindow)
@@ -56,6 +57,7 @@ void MainWindow::rafraichirTableau() {
     }
 
     mettreAJourFiltres();
+
 }
 
 //Fonction pour mettre les filtres à jour

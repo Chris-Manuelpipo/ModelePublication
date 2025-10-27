@@ -1,9 +1,13 @@
 ModelePublicationn_autogen/timestamp: \
 	/home/chris-manuel/Bureau/ModelePublicationn/CMakeLists.txt \
+	/home/chris-manuel/Bureau/ModelePublicationn/accueil.cpp \
+	/home/chris-manuel/Bureau/ModelePublicationn/accueil.h \
 	/home/chris-manuel/Bureau/ModelePublicationn/build/Desktop-Debug/.qtc/package-manager/auto-setup.cmake \
 	/home/chris-manuel/Bureau/ModelePublicationn/build/Desktop-Debug/CMakeFiles/3.28.3/CMakeCXXCompiler.cmake \
 	/home/chris-manuel/Bureau/ModelePublicationn/build/Desktop-Debug/CMakeFiles/3.28.3/CMakeSystem.cmake \
 	/home/chris-manuel/Bureau/ModelePublicationn/build/Desktop-Debug/ModelePublicationn_autogen/moc_predefs.h \
+	/home/chris-manuel/Bureau/ModelePublicationn/clientwindow.cpp \
+	/home/chris-manuel/Bureau/ModelePublicationn/clientwindow.h \
 	/home/chris-manuel/Bureau/ModelePublicationn/include/Publication.hpp \
 	/home/chris-manuel/Bureau/ModelePublicationn/include/Ressource.hpp \
 	/home/chris-manuel/Bureau/ModelePublicationn/main.cpp \
@@ -295,6 +299,7 @@ ModelePublicationn_autogen/timestamp: \
 	/usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \
 	/usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
 	/usr/include/x86_64-linux-gnu/gnu/stubs.h \
+	/usr/include/x86_64-linux-gnu/qt6/QtCore/QFileSystemWatcher \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/QSet \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/qalgorithms.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/qanystringview.h \
@@ -320,6 +325,7 @@ ModelePublicationn_autogen/timestamp: \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/qcontiguouscache.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/qdatastream.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/qdebug.h \
+	/usr/include/x86_64-linux-gnu/qt6/QtCore/qfilesystemwatcher.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/qflags.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/qforeach.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/qgenericatomic.h \
@@ -406,6 +412,7 @@ ModelePublicationn_autogen/timestamp: \
 	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/QMainWindow \
 	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/QRadioButton \
 	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/QVBoxLayout \
+	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/QWidget \
 	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/qabstractbutton.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/qboxlayout.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/qgridlayout.h \
@@ -551,5 +558,7 @@ ModelePublicationn_autogen/timestamp: \
 	/usr/share/cmake-3.28/Modules/Platform/Linux-Initialize.cmake \
 	/usr/share/cmake-3.28/Modules/Platform/Linux.cmake \
 	/usr/share/cmake-3.28/Modules/Platform/UnixPaths.cmake \
+	/home/chris-manuel/Bureau/ModelePublicationn/accueil.ui \
+	/home/chris-manuel/Bureau/ModelePublicationn/clientwindow.ui \
 	/home/chris-manuel/Bureau/ModelePublicationn/mainwindow.ui \
 	/usr/bin/cmake

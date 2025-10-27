@@ -137,9 +137,11 @@ bool Publication::charger(const std::string& fichier) {
         std::getline(ss, token, ';'); dispo = (token == "1");
 
         Ressource res(section, rangee, siege, prix, dispo);
+        //Gère le conflit d'id entre le client et le serveur
+
+        res.setId(id);
 
         // On force l'id pour correspondre à celui du fichier
-        // (à ajuster si tu utilises un compteur statique)
         ressources.push_back(res);
     }
     return true;

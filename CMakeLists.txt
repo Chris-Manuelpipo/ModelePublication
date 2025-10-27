@@ -21,7 +21,11 @@ set(PROJECT_SOURCES
 )
 
 add_executable(ModelePublicationn ${PROJECT_SOURCES}
-    ressources.qrc)
+    ressources.qrc
+    accueil.h accueil.cpp accueil.ui
+    clientwindow.h clientwindow.cpp clientwindow.ui
+
+)
 target_include_directories(ModelePublicationn PRIVATE include)
 target_link_libraries(ModelePublicationn PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
 

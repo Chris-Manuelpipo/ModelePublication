@@ -19,7 +19,7 @@ Ressource::Ressource(const std::string& section,
                         id = ++compteur; //On affecte à l'id l'entier naturel directement supérieur à l'id précédant
                     }
 
-// Getters accesseurs
+//Getters accesseurs
 int Ressource::getId() const { return id; }
 std::string Ressource::getSection() const { return section; }
 std::string Ressource::getRangee() const { return rangee; }
@@ -27,7 +27,12 @@ int Ressource::getSiege() const { return siege; }
 double Ressource::getPrix() const { return prix; }
 bool Ressource::estDisponible() const { return disponible; }
 
-// Setters mutateurs
+//mutateurs
+void Ressource::setId(int nouveauId) {
+    id = nouveauId;
+    if (nouveauId > compteur)
+        compteur = nouveauId; // pour garder le compteur à jour
+}
 void Ressource::setDisponible(bool etat) { disponible = etat; }
 void Ressource::setPrix(double nouveauPrix) { prix = nouveauPrix; }
 void Ressource::setSection(const std::string& s) { section = s; }

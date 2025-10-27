@@ -3,7 +3,6 @@
 #include <QVBoxLayout>
 #include <QRadioButton>
 #include <QSet>
-
 #include "Publication.hpp"
 
 QT_BEGIN_NAMESPACE
@@ -37,7 +36,8 @@ private:
     //Pour créer dynamiquement les boutons radio
     void majBoutons(QVBoxLayout* layout, const QString& valeur, QSet<QString>& ensemble);
 
-    //Garde les valeurs connues
+    //Garde les valeurs connues ie celles qui ne seront plus ajoutées commme bouton radios
+
     QSet<QString> sectionsConnues;
     QSet<QString> rangeesConnues;
     QSet<QString> prixConnus;

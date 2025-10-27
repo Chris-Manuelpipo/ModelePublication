@@ -32,6 +32,7 @@ public:
     bool estDisponible() const;
 
     // Mutateur pour modifier les attributs
+    void setId(int nouveauId);
     void setDisponible(bool etat);
     void setPrix(double nouveauPrix);
     void setSection(const std::string& s);

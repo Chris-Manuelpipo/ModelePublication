@@ -1,7 +1,7 @@
 CMakeFiles/ModelePublicationn.dir/ModelePublicationn_autogen/mocs_compilation.cpp.o: \
  /home/chris-manuel/Bureau/ModelePublicationn/build/Desktop-Debug/ModelePublicationn_autogen/mocs_compilation.cpp \
  /usr/include/stdc-predef.h \
- /home/chris-manuel/Bureau/ModelePublicationn/build/Desktop-Debug/ModelePublicationn_autogen/EWIEGA46WW/moc_mainwindow.cpp \
+ /home/chris-manuel/Bureau/ModelePublicationn/build/Desktop-Debug/ModelePublicationn_autogen/EWIEGA46WW/moc_accueil.cpp \
  /usr/include/c++/13/memory /usr/include/c++/13/bits/memoryfwd.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \
@@ -116,9 +116,9 @@ CMakeFiles/ModelePublicationn.dir/ModelePublicationn_autogen/mocs_compilation.cp
  /usr/include/c++/13/backward/auto_ptr.h \
  /usr/include/c++/13/pstl/glue_memory_defs.h \
  /usr/include/c++/13/pstl/execution_defs.h \
- /home/chris-manuel/Bureau/ModelePublicationn/build/Desktop-Debug/ModelePublicationn_autogen/EWIEGA46WW/../../../../mainwindow.h \
- /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QMainWindow \
- /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qmainwindow.h \
+ /home/chris-manuel/Bureau/ModelePublicationn/build/Desktop-Debug/ModelePublicationn_autogen/EWIEGA46WW/../../../../accueil.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QWidget \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qwidget.h \
  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qtwidgetsglobal.h \
  /usr/include/x86_64-linux-gnu/qt6/QtGui/qtguiglobal.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qglobal.h \
@@ -189,7 +189,6 @@ CMakeFiles/ModelePublicationn.dir/ModelePublicationn_autogen/mocs_compilation.cp
  /usr/include/x86_64-linux-gnu/qt6/QtGui/qtguiexports.h \
  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qtwidgets-config.h \
  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qtwidgetsexports.h \
- /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qwidget.h \
  /usr/include/x86_64-linux-gnu/qt6/QtGui/qwindowdefs.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qobjectdefs.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qnamespace.h \
@@ -341,6 +340,11 @@ CMakeFiles/ModelePublicationn.dir/ModelePublicationn_autogen/mocs_compilation.cp
  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qsizepolicy.h \
  /usr/include/x86_64-linux-gnu/qt6/QtGui/qcursor.h \
  /usr/include/x86_64-linux-gnu/qt6/QtGui/qbitmap.h \
+ /home/chris-manuel/Bureau/ModelePublicationn/build/Desktop-Debug/ModelePublicationn_autogen/EWIEGA46WW/moc_clientwindow.cpp \
+ /home/chris-manuel/Bureau/ModelePublicationn/build/Desktop-Debug/ModelePublicationn_autogen/EWIEGA46WW/../../../../clientwindow.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QMainWindow \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qmainwindow.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qwidget.h \
  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qtabwidget.h \
  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QVBoxLayout \
  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qboxlayout.h \
@@ -353,5 +357,9 @@ CMakeFiles/ModelePublicationn.dir/ModelePublicationn_autogen/mocs_compilation.cp
  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qabstractbutton.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/QSet \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qset.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/QFileSystemWatcher \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qfilesystemwatcher.h \
  /home/chris-manuel/Bureau/ModelePublicationn/include/Publication.hpp \
- /home/chris-manuel/Bureau/ModelePublicationn/include/Ressource.hpp
+ /home/chris-manuel/Bureau/ModelePublicationn/include/Ressource.hpp \
+ /home/chris-manuel/Bureau/ModelePublicationn/build/Desktop-Debug/ModelePublicationn_autogen/EWIEGA46WW/moc_mainwindow.cpp \
+ /home/chris-manuel/Bureau/ModelePublicationn/build/Desktop-Debug/ModelePublicationn_autogen/EWIEGA46WW/../../../../mainwindow.h

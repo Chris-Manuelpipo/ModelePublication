@@ -206,6 +206,18 @@
 	"HEADERS" : 
 	[
 		[
+			"/home/chris-manuel/Bureau/ModelePublicationn/accueil.h",
+			"MU",
+			"EWIEGA46WW/moc_accueil.cpp",
+			null
+		],
+		[
+			"/home/chris-manuel/Bureau/ModelePublicationn/clientwindow.h",
+			"MU",
+			"EWIEGA46WW/moc_clientwindow.cpp",
+			null
+		],
+		[
 			"/home/chris-manuel/Bureau/ModelePublicationn/mainwindow.h",
 			"MU",
 			"EWIEGA46WW/moc_mainwindow.cpp",
@@ -271,6 +283,16 @@
 	"SETTINGS_FILE" : "/home/chris-manuel/Bureau/ModelePublicationn/build/Desktop-Debug/CMakeFiles/ModelePublicationn_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
+		[
+			"/home/chris-manuel/Bureau/ModelePublicationn/accueil.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/chris-manuel/Bureau/ModelePublicationn/clientwindow.cpp",
+			"MU",
+			null
+		],
 		[ "/home/chris-manuel/Bureau/ModelePublicationn/main.cpp", "MU", null ],
 		[
 			"/home/chris-manuel/Bureau/ModelePublicationn/mainwindow.cpp",

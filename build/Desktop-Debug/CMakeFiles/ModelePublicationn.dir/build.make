@@ -161,10 +161,38 @@ CMakeFiles/ModelePublicationn.dir/mainwindow.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ModelePublicationn.dir/mainwindow.cpp.s"
 	/usr/bin/g++-13 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chris-manuel/Bureau/ModelePublicationn/mainwindow.cpp -o CMakeFiles/ModelePublicationn.dir/mainwindow.cpp.s
 
+CMakeFiles/ModelePublicationn.dir/accueil.cpp.o: CMakeFiles/ModelePublicationn.dir/flags.make
+CMakeFiles/ModelePublicationn.dir/accueil.cpp.o: /home/chris-manuel/Bureau/ModelePublicationn/accueil.cpp
+CMakeFiles/ModelePublicationn.dir/accueil.cpp.o: CMakeFiles/ModelePublicationn.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chris-manuel/Bureau/ModelePublicationn/build/Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/ModelePublicationn.dir/accueil.cpp.o"
+	/usr/bin/g++-13 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ModelePublicationn.dir/accueil.cpp.o -MF CMakeFiles/ModelePublicationn.dir/accueil.cpp.o.d -o CMakeFiles/ModelePublicationn.dir/accueil.cpp.o -c /home/chris-manuel/Bureau/ModelePublicationn/accueil.cpp
+
+CMakeFiles/ModelePublicationn.dir/accueil.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ModelePublicationn.dir/accueil.cpp.i"
+	/usr/bin/g++-13 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chris-manuel/Bureau/ModelePublicationn/accueil.cpp > CMakeFiles/ModelePublicationn.dir/accueil.cpp.i
+
+CMakeFiles/ModelePublicationn.dir/accueil.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ModelePublicationn.dir/accueil.cpp.s"
+	/usr/bin/g++-13 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chris-manuel/Bureau/ModelePublicationn/accueil.cpp -o CMakeFiles/ModelePublicationn.dir/accueil.cpp.s
+
+CMakeFiles/ModelePublicationn.dir/clientwindow.cpp.o: CMakeFiles/ModelePublicationn.dir/flags.make
+CMakeFiles/ModelePublicationn.dir/clientwindow.cpp.o: /home/chris-manuel/Bureau/ModelePublicationn/clientwindow.cpp
+CMakeFiles/ModelePublicationn.dir/clientwindow.cpp.o: CMakeFiles/ModelePublicationn.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chris-manuel/Bureau/ModelePublicationn/build/Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/ModelePublicationn.dir/clientwindow.cpp.o"
+	/usr/bin/g++-13 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ModelePublicationn.dir/clientwindow.cpp.o -MF CMakeFiles/ModelePublicationn.dir/clientwindow.cpp.o.d -o CMakeFiles/ModelePublicationn.dir/clientwindow.cpp.o -c /home/chris-manuel/Bureau/ModelePublicationn/clientwindow.cpp
+
+CMakeFiles/ModelePublicationn.dir/clientwindow.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ModelePublicationn.dir/clientwindow.cpp.i"
+	/usr/bin/g++-13 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chris-manuel/Bureau/ModelePublicationn/clientwindow.cpp > CMakeFiles/ModelePublicationn.dir/clientwindow.cpp.i
+
+CMakeFiles/ModelePublicationn.dir/clientwindow.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ModelePublicationn.dir/clientwindow.cpp.s"
+	/usr/bin/g++-13 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chris-manuel/Bureau/ModelePublicationn/clientwindow.cpp -o CMakeFiles/ModelePublicationn.dir/clientwindow.cpp.s
+
 CMakeFiles/ModelePublicationn.dir/ModelePublicationn_autogen/EWIEGA46WW/qrc_ressources.cpp.o: CMakeFiles/ModelePublicationn.dir/flags.make
 CMakeFiles/ModelePublicationn.dir/ModelePublicationn_autogen/EWIEGA46WW/qrc_ressources.cpp.o: ModelePublicationn_autogen/EWIEGA46WW/qrc_ressources.cpp
 CMakeFiles/ModelePublicationn.dir/ModelePublicationn_autogen/EWIEGA46WW/qrc_ressources.cpp.o: CMakeFiles/ModelePublicationn.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chris-manuel/Bureau/ModelePublicationn/build/Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/ModelePublicationn.dir/ModelePublicationn_autogen/EWIEGA46WW/qrc_ressources.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chris-manuel/Bureau/ModelePublicationn/build/Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/ModelePublicationn.dir/ModelePublicationn_autogen/EWIEGA46WW/qrc_ressources.cpp.o"
 	/usr/bin/g++-13 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ModelePublicationn.dir/ModelePublicationn_autogen/EWIEGA46WW/qrc_ressources.cpp.o -MF CMakeFiles/ModelePublicationn.dir/ModelePublicationn_autogen/EWIEGA46WW/qrc_ressources.cpp.o.d -o CMakeFiles/ModelePublicationn.dir/ModelePublicationn_autogen/EWIEGA46WW/qrc_ressources.cpp.o -c /home/chris-manuel/Bureau/ModelePublicationn/build/Desktop-Debug/ModelePublicationn_autogen/EWIEGA46WW/qrc_ressources.cpp
 
 CMakeFiles/ModelePublicationn.dir/ModelePublicationn_autogen/EWIEGA46WW/qrc_ressources.cpp.i: cmake_force
@@ -182,6 +210,8 @@ ModelePublicationn_OBJECTS = \
 "CMakeFiles/ModelePublicationn.dir/src/Publication.cpp.o" \
 "CMakeFiles/ModelePublicationn.dir/main.cpp.o" \
 "CMakeFiles/ModelePublicationn.dir/mainwindow.cpp.o" \
+"CMakeFiles/ModelePublicationn.dir/accueil.cpp.o" \
+"CMakeFiles/ModelePublicationn.dir/clientwindow.cpp.o" \
 "CMakeFiles/ModelePublicationn.dir/ModelePublicationn_autogen/EWIEGA46WW/qrc_ressources.cpp.o"
 
 # External object files for target ModelePublicationn
@@ -192,6 +222,8 @@ ModelePublicationn: CMakeFiles/ModelePublicationn.dir/src/Ressource.cpp.o
 ModelePublicationn: CMakeFiles/ModelePublicationn.dir/src/Publication.cpp.o
 ModelePublicationn: CMakeFiles/ModelePublicationn.dir/main.cpp.o
 ModelePublicationn: CMakeFiles/ModelePublicationn.dir/mainwindow.cpp.o
+ModelePublicationn: CMakeFiles/ModelePublicationn.dir/accueil.cpp.o
+ModelePublicationn: CMakeFiles/ModelePublicationn.dir/clientwindow.cpp.o
 ModelePublicationn: CMakeFiles/ModelePublicationn.dir/ModelePublicationn_autogen/EWIEGA46WW/qrc_ressources.cpp.o
 ModelePublicationn: CMakeFiles/ModelePublicationn.dir/build.make
 ModelePublicationn: /usr/lib/x86_64-linux-gnu/libQt6Widgets.so.6.4.2
@@ -200,7 +232,7 @@ ModelePublicationn: /usr/lib/x86_64-linux-gnu/libQt6Core.so.6.4.2
 ModelePublicationn: /usr/lib/x86_64-linux-gnu/libGLX.so
 ModelePublicationn: /usr/lib/x86_64-linux-gnu/libOpenGL.so
 ModelePublicationn: CMakeFiles/ModelePublicationn.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/chris-manuel/Bureau/ModelePublicationn/build/Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable ModelePublicationn"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/chris-manuel/Bureau/ModelePublicationn/build/Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Linking CXX executable ModelePublicationn"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ModelePublicationn.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

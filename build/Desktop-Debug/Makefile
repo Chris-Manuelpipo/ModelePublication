@@ -203,6 +203,54 @@ ModelePublicationn_autogen/mocs_compilation.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ModelePublicationn.dir/build.make CMakeFiles/ModelePublicationn.dir/ModelePublicationn_autogen/mocs_compilation.cpp.s
 .PHONY : ModelePublicationn_autogen/mocs_compilation.cpp.s
 
+accueil.o: accueil.cpp.o
+.PHONY : accueil.o
+
+# target to build an object file
+accueil.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ModelePublicationn.dir/build.make CMakeFiles/ModelePublicationn.dir/accueil.cpp.o
+.PHONY : accueil.cpp.o
+
+accueil.i: accueil.cpp.i
+.PHONY : accueil.i
+
+# target to preprocess a source file
+accueil.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ModelePublicationn.dir/build.make CMakeFiles/ModelePublicationn.dir/accueil.cpp.i
+.PHONY : accueil.cpp.i
+
+accueil.s: accueil.cpp.s
+.PHONY : accueil.s
+
+# target to generate assembly for a file
+accueil.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ModelePublicationn.dir/build.make CMakeFiles/ModelePublicationn.dir/accueil.cpp.s
+.PHONY : accueil.cpp.s
+
+clientwindow.o: clientwindow.cpp.o
+.PHONY : clientwindow.o
+
+# target to build an object file
+clientwindow.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ModelePublicationn.dir/build.make CMakeFiles/ModelePublicationn.dir/clientwindow.cpp.o
+.PHONY : clientwindow.cpp.o
+
+clientwindow.i: clientwindow.cpp.i
+.PHONY : clientwindow.i
+
+# target to preprocess a source file
+clientwindow.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ModelePublicationn.dir/build.make CMakeFiles/ModelePublicationn.dir/clientwindow.cpp.i
+.PHONY : clientwindow.cpp.i
+
+clientwindow.s: clientwindow.cpp.s
+.PHONY : clientwindow.s
+
+# target to generate assembly for a file
+clientwindow.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ModelePublicationn.dir/build.make CMakeFiles/ModelePublicationn.dir/clientwindow.cpp.s
+.PHONY : clientwindow.cpp.s
+
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -316,6 +364,12 @@ help:
 	@echo "... ModelePublicationn_autogen/mocs_compilation.o"
 	@echo "... ModelePublicationn_autogen/mocs_compilation.i"
 	@echo "... ModelePublicationn_autogen/mocs_compilation.s"
+	@echo "... accueil.o"
+	@echo "... accueil.i"
+	@echo "... accueil.s"
+	@echo "... clientwindow.o"
+	@echo "... clientwindow.i"
+	@echo "... clientwindow.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

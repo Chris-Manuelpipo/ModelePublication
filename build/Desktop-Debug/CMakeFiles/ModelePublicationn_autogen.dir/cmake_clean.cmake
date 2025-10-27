@@ -1,5 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/ModelePublicationn_autogen"
+  "ModelePublicationn_autogen/include/ui_accueil.h"
+  "ModelePublicationn_autogen/include/ui_clientwindow.h"
   "ModelePublicationn_autogen/include/ui_mainwindow.h"
   "ModelePublicationn_autogen/mocs_compilation.cpp"
   "ModelePublicationn_autogen/timestamp"
