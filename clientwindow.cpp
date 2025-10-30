@@ -159,7 +159,15 @@ void ClientWindow::majBoutons(QVBoxLayout *layout, const QString &valeur, QSet<Q
     QRadioButton *radio = new QRadioButton(valeur);
     layout->addWidget(radio);
     connect(radio, &QRadioButton::toggled, this, [=](bool checked){
-        if (checked) filtrerTableau();
+        if (radio == dernierClic){
+            radio->setAutoExclusive(false);
+            radio->setChecked(false);
+            radio->setAutoExclusive(true);
+            dernierClic = nullptr;
+            filtrerTableau();
+        }else{
+            dernierClic = radio;
+            filtrerTableau();}
     });
 }
 

@@ -67,14 +67,18 @@ public:
         gridLayout_8->addLayout(gridLayout_7, 0, 0, 1, 1);
 
         tableRessources = new QTableWidget(centralwidget);
+        if (tableRessources->columnCount() < 6)
+            tableRessources->setColumnCount(6);
         tableRessources->setObjectName("tableRessources");
         tableRessources->setEnabled(true);
         tableRessources->setMinimumSize(QSize(660, 531));
+        tableRessources->setMaximumSize(QSize(661, 16777215));
         tableRessources->viewport()->setProperty("cursor", QVariant(QCursor(Qt::ArrowCursor)));
         tableRessources->setFrameShape(QFrame::StyledPanel);
         tableRessources->setFrameShadow(QFrame::Sunken);
         tableRessources->setShowGrid(true);
         tableRessources->setSortingEnabled(false);
+        tableRessources->setColumnCount(6);
         tableRessources->horizontalHeader()->setVisible(true);
         tableRessources->horizontalHeader()->setCascadingSectionResizes(false);
         tableRessources->horizontalHeader()->setMinimumSectionSize(110);

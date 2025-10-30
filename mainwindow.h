@@ -45,4 +45,8 @@ private:
     QVBoxLayout *layoutSections;
     QVBoxLayout *layoutRangees;
     QVBoxLayout *layoutPrix;
+
+    //Décocher un bouton radio
+
+    QRadioButton *dernierClic = nullptr;
 };

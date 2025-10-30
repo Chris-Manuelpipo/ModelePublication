@@ -84,7 +84,15 @@ void MainWindow::majBoutons(QVBoxLayout *layout, const QString &valeur, QSet<QSt
     QRadioButton *radio = new QRadioButton(valeur);
     layout->addWidget(radio);
     connect(radio, &QRadioButton::toggled, this, [=](bool checked){
-        if (checked) filtrerTableau();
+        if (radio->isChecked() && radio == dernierClic){
+            radio->setAutoExclusive(false);
+            radio->setChecked(false);
+            radio->setAutoExclusive(true);
+            dernierClic = nullptr;
+            filtrerTableau();
+        }else{
+            dernierClic = radio;
+            filtrerTableau();}
     });
 }
 

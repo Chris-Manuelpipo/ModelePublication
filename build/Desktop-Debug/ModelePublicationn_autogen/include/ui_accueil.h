@@ -20,33 +20,33 @@ QT_BEGIN_NAMESPACE
 class Ui_accueil
 {
 public:
-    QWidget *gridLayoutWidget;
     QGridLayout *gridLayout;
-    QPushButton *btnAdmin;
     QPushButton *btnClient;
+    QPushButton *btnAdmin;
 
     void setupUi(QWidget *accueil)
     {
         if (accueil->objectName().isEmpty())
             accueil->setObjectName("accueil");
-        accueil->resize(813, 425);
-        gridLayoutWidget = new QWidget(accueil);
-        gridLayoutWidget->setObjectName("gridLayoutWidget");
-        gridLayoutWidget->setGeometry(QRect(200, 80, 391, 241));
-        gridLayout = new QGridLayout(gridLayoutWidget);
+        accueil->setWindowModality(Qt::NonModal);
+        accueil->resize(813, 569);
+        accueil->setMinimumSize(QSize(813, 425));
+        gridLayout = new QGridLayout(accueil);
         gridLayout->setObjectName("gridLayout");
-        gridLayout->setContentsMargins(0, 0, 0, 0);
-        btnAdmin = new QPushButton(gridLayoutWidget);
+        gridLayout->setContentsMargins(100, 100, 100, 100);
+        btnClient = new QPushButton(accueil);
+        btnClient->setObjectName("btnClient");
+
+        gridLayout->addWidget(btnClient, 1, 0, 1, 1);
+
+        btnAdmin = new QPushButton(accueil);
         btnAdmin->setObjectName("btnAdmin");
+        btnAdmin->setMinimumSize(QSize(2, 2));
+        btnAdmin->setMaximumSize(QSize(16777, 16777215));
         btnAdmin->setAutoDefault(false);
         btnAdmin->setFlat(false);
 
         gridLayout->addWidget(btnAdmin, 0, 0, 1, 1);
-
-        btnClient = new QPushButton(gridLayoutWidget);
-        btnClient->setObjectName("btnClient");
-
-        gridLayout->addWidget(btnClient, 1, 0, 1, 1);
 
 
         retranslateUi(accueil);
@@ -60,8 +60,8 @@ public:
     void retranslateUi(QWidget *accueil)
     {
         accueil->setWindowTitle(QCoreApplication::translate("accueil", "Publication des places d'un stade de football", nullptr));
-        btnAdmin->setText(QCoreApplication::translate("accueil", "Administrateur", nullptr));
         btnClient->setText(QCoreApplication::translate("accueil", "Client", nullptr));
+        btnAdmin->setText(QCoreApplication::translate("accueil", "Administrateur", nullptr));
     } // retranslateUi
 
 };
