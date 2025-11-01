@@ -8,6 +8,9 @@ accueil::accueil(QWidget *parent)
     , ui(new Ui::accueil)
 {
     ui->setupUi(this);
+    ui->btnAdmin->setStyleSheet("background-color: #3498db; color: white; font-weight: bold; font-size: 16px; border-radius: 10px;");
+    ui->btnClient->setStyleSheet("background-color: #2ecc71; color: white; font-weight: bold; font-size: 16px; border-radius: 10px;");
+
 }
 
 accueil::~accueil()
@@ -29,4 +32,5 @@ void accueil::on_btnClient_clicked()
     client->show();
     this->close();
 }
+
 

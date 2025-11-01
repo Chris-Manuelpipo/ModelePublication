@@ -56,7 +56,7 @@ void ClientWindow::onFileChanged(const QString &path)
 
     //Recharger les nouvelles ressources
     gestionnaire.charger("places.txt");
-    afficherPlaces();
+    //afficherPlaces();
     rafraichirTableau();
 
     qDebug() << "Places affichées :" << path;
@@ -70,6 +70,12 @@ void ClientWindow::onFileChanged(const QString &path)
 
 void ClientWindow::rafraichirTableau() {
     const auto& ressources = gestionnaire.getRessources(); //retourne la liste des ressources
+
+    int nbPub = 0;
+    for (const auto& r : ressources)
+        if (r.estDisponible()) ++nbPub;
+    ui->tableRessources->setRowCount(nbPub);
+
     ui->tableRessources->setRowCount(ressources.size()); //le nombre de lignes du tableau correspond au nombre de places
     ui->tableRessources->setColumnCount(6);
     QStringList headers = {"ID", "Section", "Rangée", "Siège", "Prix (FCFA)", "Disponible"};
@@ -82,6 +88,8 @@ void ClientWindow::rafraichirTableau() {
 
     for (int i = 0; i < ressources.size(); ++i) {
         const auto& r = ressources[i];
+        if (!r.estDisponible()) continue; // n'afficher que les places publiées
+
         QString section = QString::fromStdString(r.getSection());
         QString rangee  = QString::fromStdString(r.getRangee());
         QString prix    = QString::number(r.getPrix());

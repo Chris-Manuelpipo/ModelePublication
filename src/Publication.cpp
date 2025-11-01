@@ -1,6 +1,3 @@
-
-
-
 #include "Publication.hpp"
 #include <iostream>
 #include <fstream>
@@ -32,6 +29,23 @@ bool Publication::publier(const Ressource& res) {
                   << ", Siège " << res.getSiege() << std::endl;
     return true;
 }
+
+// header
+;
+
+// implementation (exemple simple)
+bool Publication::publierParId(int id, double nouveauPrix) {
+    for (auto &r : ressources) { // ressources : std::vector<Ressource>
+        if (r.getId() == id) {
+            if (r.estDisponible()) return false; // déjà publié
+            r.setPrix(nouveauPrix);
+            r.setDisponible(true);
+            return true;
+        }
+    }
+    return false; // introuvable
+}
+
 
 
 /*void Publication::publier(const Ressource& res) {

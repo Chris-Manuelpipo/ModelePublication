@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1875</width>
+    <width>1820</width>
     <height>800</height>
    </rect>
   </property>
@@ -17,27 +17,55 @@
    <bool>false</bool>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QGridLayout" name="gridLayout_3" rowstretch="1,4,1" columnstretch="0,1,1" rowminimumheight="1,1,1" columnminimumwidth="1,1,1">
-    <property name="leftMargin">
-     <number>50</number>
-    </property>
-    <property name="topMargin">
-     <number>50</number>
-    </property>
-    <property name="rightMargin">
-     <number>50</number>
-    </property>
-    <property name="bottomMargin">
-     <number>50</number>
-    </property>
-    <property name="horizontalSpacing">
-     <number>75</number>
-    </property>
-    <property name="verticalSpacing">
-     <number>35</number>
-    </property>
-    <item row="1" column="0">
-     <layout class="QGridLayout" name="gridLayout" columnstretch="5,50" rowminimumheight="10,10,10,10" columnminimumwidth="5,25">
+   <layout class="QGridLayout" name="gridLayout_2">
+    <item row="0" column="0" rowspan="2">
+     <widget class="QTableWidget" name="tableRessources_2">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>660</width>
+        <height>531</height>
+       </size>
+      </property>
+      <property name="cursor" stdset="0">
+       <cursorShape>ArrowCursor</cursorShape>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Sunken</enum>
+      </property>
+      <property name="showGrid">
+       <bool>true</bool>
+      </property>
+      <property name="sortingEnabled">
+       <bool>false</bool>
+      </property>
+      <property name="columnCount">
+       <number>0</number>
+      </property>
+      <attribute name="horizontalHeaderMinimumSectionSize">
+       <number>110</number>
+      </attribute>
+      <attribute name="horizontalHeaderDefaultSectionSize">
+       <number>131</number>
+      </attribute>
+      <attribute name="horizontalHeaderHighlightSections">
+       <bool>true</bool>
+      </attribute>
+      <attribute name="verticalHeaderVisible">
+       <bool>false</bool>
+      </attribute>
+      <attribute name="verticalHeaderShowSortIndicator" stdset="0">
+       <bool>false</bool>
+      </attribute>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <layout class="QGridLayout" name="gridLayout" columnstretch="5,0">
       <property name="sizeConstraint">
        <enum>QLayout::SetNoConstraint</enum>
       </property>
@@ -51,13 +79,6 @@
         </property>
        </widget>
       </item>
-      <item row="0" column="1">
-       <widget class="QLineEdit" name="inputSection">
-        <property name="placeholderText">
-         <string>VVIP, VIP, STANDARD, CLASSIC...</string>
-        </property>
-       </widget>
-      </item>
       <item row="2" column="1">
        <widget class="QLineEdit" name="inputSiege">
         <property name="placeholderText">
@@ -65,16 +86,17 @@
         </property>
        </widget>
       </item>
-      <item row="3" column="1">
-       <widget class="QLineEdit" name="inputPrix">
-        <property name="inputMask">
-         <string/>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
+      <item row="1" column="1">
+       <widget class="QLineEdit" name="inputRangee">
         <property name="placeholderText">
-         <string>5000, 10000, 20000...</string>
+         <string>A,B,C,D...</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QLineEdit" name="inputSection">
+        <property name="placeholderText">
+         <string>VVIP, VIP, STANDARD, CLASSIC...</string>
         </property>
        </widget>
       </item>
@@ -99,16 +121,22 @@
         </property>
        </widget>
       </item>
-      <item row="1" column="1">
-       <widget class="QLineEdit" name="inputRangee">
+      <item row="3" column="1">
+       <widget class="QLineEdit" name="inputPrix">
+        <property name="inputMask">
+         <string/>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
         <property name="placeholderText">
-         <string>A,B,C,D...</string>
+         <string>5000, 10000, 20000...</string>
         </property>
        </widget>
       </item>
      </layout>
     </item>
-    <item row="1" column="1" rowspan="2">
+    <item row="0" column="2" rowspan="2">
      <widget class="QTableWidget" name="tableRessources">
       <property name="enabled">
        <bool>true</bool>
@@ -154,7 +182,7 @@
       </attribute>
      </widget>
     </item>
-    <item row="2" column="0">
+    <item row="1" column="1">
      <layout class="QHBoxLayout" name="horizontalLayout" stretch="1,1,1,1">
       <property name="spacing">
        <number>30</number>
@@ -214,129 +242,6 @@
       </item>
      </layout>
     </item>
-    <item row="0" column="1">
-     <layout class="QGridLayout" name="gridLayout_2" rowstretch="0" columnstretch="0" columnminimumwidth="0">
-      <property name="sizeConstraint">
-       <enum>QLayout::SetDefaultConstraint</enum>
-      </property>
-      <item row="0" column="0">
-       <widget class="QLineEdit" name="inputRecherche">
-        <property name="placeholderText">
-         <string>Rechercher une place</string>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </item>
-    <item row="1" column="2" rowspan="2">
-     <layout class="QGridLayout" name="gridLayout_4" rowstretch="100,300,80" columnstretch="100,100,100" rowminimumheight="5,150,40" columnminimumwidth="25,25,25">
-      <property name="leftMargin">
-       <number>8</number>
-      </property>
-      <property name="topMargin">
-       <number>8</number>
-      </property>
-      <property name="horizontalSpacing">
-       <number>20</number>
-      </property>
-      <property name="verticalSpacing">
-       <number>32</number>
-      </property>
-      <item row="1" column="0">
-       <widget class="QGroupBox" name="groupSections">
-        <property name="title">
-         <string>Section</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignCenter</set>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="2">
-       <widget class="QGroupBox" name="groupPrix">
-        <property name="enabled">
-         <bool>true</bool>
-        </property>
-        <property name="title">
-         <string>Prix</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignCenter</set>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="1">
-       <widget class="QGroupBox" name="groupRangees">
-        <property name="contextMenuPolicy">
-         <enum>Qt::DefaultContextMenu</enum>
-        </property>
-        <property name="title">
-         <string>Rangée</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignCenter</set>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="1">
-       <widget class="QPushButton" name="btnResetFiltres">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="text">
-         <string>Pas de filtre</string>
-        </property>
-        <property name="icon">
-         <iconset resource="ressources.qrc">
-          <normaloff>:/new/prefix1/icons/sauvegarde.png</normaloff>:/new/prefix1/icons/sauvegarde.png</iconset>
-        </property>
-        <property name="autoDefault">
-         <bool>false</bool>
-        </property>
-        <property name="default">
-         <bool>false</bool>
-        </property>
-        <property name="flat">
-         <bool>false</bool>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="0" colspan="3">
-       <widget class="QLabel" name="Filtrage">
-        <property name="tabletTracking">
-         <bool>false</bool>
-        </property>
-        <property name="layoutDirection">
-         <enum>Qt::LeftToRight</enum>
-        </property>
-        <property name="autoFillBackground">
-         <bool>false</bool>
-        </property>
-        <property name="frameShape">
-         <enum>QFrame::NoFrame</enum>
-        </property>
-        <property name="text">
-         <string>Filtrage par :</string>
-        </property>
-        <property name="textFormat">
-         <enum>Qt::PlainText</enum>
-        </property>
-        <property name="scaledContents">
-         <bool>false</bool>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignCenter</set>
-        </property>
-        <property name="wordWrap">
-         <bool>false</bool>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </item>
    </layout>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -344,7 +249,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1875</width>
+     <width>1820</width>
      <height>23</height>
     </rect>
    </property>

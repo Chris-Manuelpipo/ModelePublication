@@ -10,6 +10,7 @@ private:
     
 
 public:
+    bool publierParId(int id, double nouveauPrix);
     bool publier(const Ressource& res); //Fonction de publication; ajoute la place à la liste de places
     bool retirer(int id); // Supprimer une place par son id
     bool modifier(int id, const Ressource &nouvelle);

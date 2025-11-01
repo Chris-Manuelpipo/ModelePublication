@@ -1,264 +1,167 @@
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
 #include <QMessageBox>
-#include "clientwindow.h" //Pour mettre à jour les filtres après publication
 
 MainWindow::MainWindow(QWidget *parent)
-    : QMainWindow(parent), ui(new Ui::MainWindow)
+    : QMainWindow(parent), ui(new Ui::MainWindow), idEnCours(-1)
 {
     ui->setupUi(this);
-    layoutSections = new QVBoxLayout(ui->groupSections);
-    layoutRangees  = new QVBoxLayout(ui->groupRangees);
-    layoutPrix     = new QVBoxLayout(ui->groupPrix);
 
-    // Connexion de la barre de recherche
-    connect(ui->inputRecherche, &QLineEdit::textChanged, this, &MainWindow::filtrerTableau);
-    //On affiche le tableau au démarrage de l'application
+    // Charger les places depuis le fichier
     gestionnaire.charger("places.txt");
-    rafraichirTableau();
 
+    // Initialiser les listes si nécessaire
+    initialiserPlaces();
+
+    // Mettre à jour les tableaux UI
+    mettreAJourTables();
+
+    // Rendre les champs non modifiables sauf le prix
+    ui->inputSection->setReadOnly(true);
+    ui->inputRangee->setReadOnly(true);
+    ui->inputSiege->setReadOnly(true);
+    ui->inputPrix->setReadOnly(false); // Prix reste modifiable
+
+    // Remplir le formulaire quand une place non publiée est sélectionnée
+    connect(ui->tableRessources_2, &QTableWidget::cellClicked, this, [this](int row, int col){
+        Q_UNUSED(col);
+        if (row < 0 || row >= placesNonPubliees.size()) return;
+
+        idEnCours = placesNonPubliees[row].getId();
+        ui->inputSection->setText(QString::fromStdString(placesNonPubliees[row].getSection()));
+        ui->inputRangee->setText(QString::fromStdString(placesNonPubliees[row].getRangee()));
+        ui->inputSiege->setText(QString::number(placesNonPubliees[row].getSiege()));
+        ui->inputPrix->setText(QString::number(placesNonPubliees[row].getPrix()));
+    });
+
+    idEnCours = -1; // aucune sélection au départ
 }
+
 MainWindow::~MainWindow() {
     delete ui;
 }
 
+// Initialisation d'exemple si le fichier est vide
+void MainWindow::initialiserPlaces()
+{
+    if (!placesNonPubliees.empty() || !placesPubliees.empty())
+        return; // déjà initialisé
 
-//Fonction pour raffraichir le tableau des places
+    placesNonPubliees = {
+        Ressource("A", "1", 1, 50000, false),
+        Ressource("A", "1", 2, 50000, false),
+        Ressource("B", "2", 1, 30000, false),
+        Ressource("C", "3", 5, 10000, false)
+    };
+}
 
-void MainWindow::rafraichirTableau() {
-    const auto& ressources = gestionnaire.getRessources(); //retourne la liste des ressources
-    ui->tableRessources->setRowCount(ressources.size()); //le nombre de lignes du tableau correspond au nombre de places
+// Mettre à jour les deux tableaux
+void MainWindow::mettreAJourTables()
+{
+    const auto& ressources = gestionnaire.getRessources();
+
+    // ----- Table publiées -----
+    ui->tableRessources->clear();
+    int nbPub = 0;
+    for (const auto& r : ressources)
+        if (r.estDisponible()) ++nbPub;
+    ui->tableRessources->setRowCount(nbPub);
     ui->tableRessources->setColumnCount(6);
-    QStringList headers = {"ID", "Section", "Rangée", "Siège", "Prix (FCFA)", "Disponible"};
-    ui->tableRessources->setHorizontalHeaderLabels(headers);
+    ui->tableRessources->setHorizontalHeaderLabels({"ID", "Section", "Rangée", "Siège", "Prix", "Disponible"});
 
-    //Nettoyer les ensembles pour les filtres
-    sectionsConnues.clear();
-    rangeesConnues.clear();
-    prixConnus.clear();
-
-    for (int i = 0; i < ressources.size(); ++i) {
-        const auto& r = ressources[i];
-        QString section = QString::fromStdString(r.getSection());
-        QString rangee  = QString::fromStdString(r.getRangee());
-        QString prix    = QString::number(r.getPrix());
-
-        ui->tableRessources->setItem(i, 0, new QTableWidgetItem(QString::number(r.getId())));
-        ui->tableRessources->setItem(i, 1, new QTableWidgetItem(section));
-        ui->tableRessources->setItem(i, 2, new QTableWidgetItem(rangee));
-        ui->tableRessources->setItem(i, 3, new QTableWidgetItem(QString::number(r.getSiege())));
-        ui->tableRessources->setItem(i, 4, new QTableWidgetItem(prix));
-        ui->tableRessources->setItem(i, 5, new QTableWidgetItem(r.estDisponible() ? "Oui" : "Non"));
-
-        //Enregistre les filtres connus
-        sectionsConnues.insert(section);
-        rangeesConnues.insert(rangee);
-        prixConnus.insert(prix);
+    int iPub = 0;
+    for (const auto& r : ressources) {
+        if (!r.estDisponible()) continue;
+        ui->tableRessources->setItem(iPub, 0, new QTableWidgetItem(QString::number(r.getId())));
+        ui->tableRessources->setItem(iPub, 1, new QTableWidgetItem(QString::fromStdString(r.getSection())));
+        ui->tableRessources->setItem(iPub, 2, new QTableWidgetItem(QString::fromStdString(r.getRangee())));
+        ui->tableRessources->setItem(iPub, 3, new QTableWidgetItem(QString::number(r.getSiege())));
+        ui->tableRessources->setItem(iPub, 4, new QTableWidgetItem(QString::number(r.getPrix())));
+        ui->tableRessources->setItem(iPub, 5, new QTableWidgetItem("Oui"));
+        ++iPub;
     }
 
-    mettreAJourFiltres();
+    // ----- Table non publiées -----
+    ui->tableRessources_2->clear();
+    int nbNonPub = 0;
+    for (const auto& r : ressources)
+        if (!r.estDisponible()) ++nbNonPub;
+    ui->tableRessources_2->setRowCount(nbNonPub);
+    ui->tableRessources_2->setColumnCount(5);
+    ui->tableRessources_2->setHorizontalHeaderLabels({"ID", "Section", "Rangée", "Siège", "Prix"});
 
-}
-
-//Fonction pour mettre les filtres à jour
-
-void MainWindow::mettreAJourFiltres() {
-    // Nettoyer les anciens boutons
-    QLayoutItem *child;
-    while ((child = layoutSections->takeAt(0)) != nullptr) delete child->widget();
-    while ((child = layoutRangees->takeAt(0)) != nullptr) delete child->widget();
-    while ((child = layoutPrix->takeAt(0)) != nullptr) delete child->widget();
-
-    // Ajouter les nouveaux boutons
-    for (const QString &val : sectionsConnues)
-        majBoutons(layoutSections, val, sectionsConnues);
-    for (const QString &val : rangeesConnues)
-        majBoutons(layoutRangees, val, rangeesConnues);
-    for (const QString &val : prixConnus)
-        majBoutons(layoutPrix, val, prixConnus);
-}
-
-//Fonction de filtrage à partir des boutons radios
-
-void MainWindow::majBoutons(QVBoxLayout *layout, const QString &valeur, QSet<QString>&) {
-    QRadioButton *radio = new QRadioButton(valeur);
-    layout->addWidget(radio);
-    connect(radio, &QRadioButton::toggled, this, [=](bool checked){
-        if (radio->isChecked() && radio == dernierClic){
-            radio->setAutoExclusive(false);
-            radio->setChecked(false);
-            radio->setAutoExclusive(true);
-            dernierClic = nullptr;
-            filtrerTableau();
-        }else{
-            dernierClic = radio;
-            filtrerTableau();}
-    });
-}
-
-//Fonction de filtrage à partir de la barre de recherche
-
-void MainWindow::filtrerTableau() {
-    QString recherche = ui->inputRecherche->text().toLower();
-
-    QString filtreSection, filtreRangee, filtrePrix;
-
-    for (auto rb : ui->groupSections->findChildren<QRadioButton*>())
-        if (rb->isChecked()) filtreSection = rb->text();
-
-    for (auto rb : ui->groupRangees->findChildren<QRadioButton*>())
-        if (rb->isChecked()) filtreRangee = rb->text();
-
-    for (auto rb : ui->groupPrix->findChildren<QRadioButton*>())
-        if (rb->isChecked()) filtrePrix = rb->text();
-
-    for (int i = 0; i < ui->tableRessources->rowCount(); ++i) {
-        QString section = ui->tableRessources->item(i, 1)->text();
-        QString rangee  = ui->tableRessources->item(i, 2)->text();
-        QString prix    = ui->tableRessources->item(i, 4)->text();
-
-        bool visible = true;
-
-        if (!filtreSection.isEmpty() && section != filtreSection) visible = false;
-        if (!filtreRangee.isEmpty() && rangee != filtreRangee) visible = false;
-        if (!filtrePrix.isEmpty() && prix != filtrePrix) visible = false;
-
-        if (!recherche.isEmpty() &&
-            !section.toLower().contains(recherche) &&
-            !rangee.toLower().contains(recherche) &&
-            !prix.toLower().contains(recherche))
-            visible = false;
-
-        ui->tableRessources->setRowHidden(i, !visible);
+    int iNonPub = 0;
+    for (const auto& r : ressources) {
+        if (r.estDisponible()) continue;
+        ui->tableRessources_2->setItem(iNonPub, 0, new QTableWidgetItem(QString::number(r.getId())));
+        ui->tableRessources_2->setItem(iNonPub, 1, new QTableWidgetItem(QString::fromStdString(r.getSection())));
+        ui->tableRessources_2->setItem(iNonPub, 2, new QTableWidgetItem(QString::fromStdString(r.getRangee())));
+        ui->tableRessources_2->setItem(iNonPub, 3, new QTableWidgetItem(QString::number(r.getSiege())));
+        ui->tableRessources_2->setItem(iNonPub, 4, new QTableWidgetItem(QString::number(r.getPrix())));
+        ++iNonPub;
     }
 }
 
-//Fonction pour réinitialiser les filtres(Afficher toutes les places)
 
-void MainWindow::on_btnResetFiltres_clicked() {
-    for (auto rb : this->findChildren<QRadioButton*>()) {
-        rb->setAutoExclusive(false);
-        rb->setChecked(false);
-        rb->setAutoExclusive(true);
-    }
-    ui->inputRecherche->clear();
-    filtrerTableau();
-}
-
-void MainWindow::on_btnModifier_clicked(){
-
-    int selected = ui->tableRessources->currentRow();
-
-    if (selected < 0) {
-        QMessageBox::warning(this, "Aucune sélection", "Veuillez sélectionner une ressource à modifier !");
+// Publier une place
+void MainWindow::on_btnPublier_clicked()
+{
+    int row = ui->tableRessources_2->currentRow();
+    if (row < 0) {
+        QMessageBox::warning(this, "Aucune sélection", "Veuillez sélectionner une place à publier !");
         return;
     }
 
-    // On récupère les données de la ligne sélectionnée
-    idEnCours = ui->tableRessources->item(selected, 0)->text().toInt();
-    QString section = ui->tableRessources->item(selected, 1)->text();
-    QString rangee  = ui->tableRessources->item(selected, 2)->text();
-    QString siege   = ui->tableRessources->item(selected, 3)->text();
-    QString prix    = ui->tableRessources->item(selected, 4)->text();
+    int id = ui->tableRessources_2->item(row, 0)->text().toInt();
+    Ressource* res = gestionnaire.rechercher(id);
+    if (!res) return;
 
-    //On remplit les champs
-    ui->inputSection->setText(section);
-    ui->inputRangee->setText(rangee);
-    ui->inputSiege->setText(siege);
-    ui->inputPrix->setText(prix);
+    // Mettre à jour prix si nécessaire
+    res->setPrix(ui->inputPrix->text().toDouble());
+    res->setDisponible(true);
 
-    QMessageBox::information(this, "Mode modification", "Modifiez les champs puis appuyez sur Publier pour valider.");
+    mettreAJourTables();
+    gestionnaire.sauvegarder("places.txt");
 
-};
-
-//Fonction pour publier une place
-
-void MainWindow::on_btnPublier_clicked() {
-    QString section = ui->inputSection->text();
-    QString rangee = ui->inputRangee->text();
-    int siege = ui->inputSiege->text().toInt();
-    double prix = ui->inputPrix->text().toDouble();
-
-    if (section.isEmpty() || rangee.isEmpty()  ) {
-        QMessageBox::warning(this, "Erreur", "Veuillez remplir tous les champs !");
-        return;
-    }
-    if(siege == 0 ){
-        QMessageBox::warning(this, "Erreur", "Le numéro de siège est un entier positif !");
-        return;
-    }
-
-    if(prix == 0 ){
-        QMessageBox::warning(this, "Erreur", "Le prix d'une place ne peut ni etre une chaine ni nul!");
-        return;
-    }
-
-    Ressource res(section.toStdString(), rangee.toStdString(), siege, prix);
-
-    //Gérer la modification des ressources
-
-    if (idEnCours == -1) {
-        //Mode ajout
-        if (gestionnaire.publier(res)) {
-            rafraichirTableau();
-        }else{
-            QMessageBox::information(this, "Information", "Cette place a déjà été publiée !");
-        }
-    }
-    //Modification
-
-    else {
-        //Mode modification
-        if (gestionnaire.modifier(idEnCours, res)) {
-            rafraichirTableau();
-            QMessageBox::information(this, "Modifié", "La place a été mise à jour !");
-            idEnCours = -1; // Reset du mode modification
-        }else {
-            QMessageBox::warning(this, "Erreur", "La modification a échoué !");
-        }
-    }
-
-
-    // On vide les champs après action
-    ui->inputSection->clear();
-    ui->inputRangee->clear();
-    ui->inputSiege->clear();
-    ui->inputPrix->clear();
+    QMessageBox::information(this, "Publication réussie", "La place a été publiée !");
 }
 
-//Fonction pour supprimer une place
 
-void MainWindow::on_btnSupprimer_clicked() {
-    int selected = ui->tableRessources->currentRow();
-    if (selected < 0) {
-        QMessageBox::warning(this, "Aucune sélection", "Veuillez sélectionner une ligne à supprimer !");
-        return;
-    }
+// Supprimer une place publiée ie la ramener comme non publiée
+// (Dépublier une place sélectionnée dans le tableau des publiées)
 
-    int id = ui->tableRessources->item(selected, 0)->text().toInt(); //selected : ligne de la place à supprimer 0: colonne de l'ID
+void MainWindow::on_btnSupprimer_clicked()
+{
+    int row = ui->tableRessources->currentRow();
+    if (row < 0) return;
 
+    int id = ui->tableRessources->item(row, 0)->text().toInt();
+    Ressource* res = gestionnaire.rechercher(id);
+    if (!res) return;
 
-    //Boîte de confirmation
-    QMessageBox::StandardButton reply;
-    reply = QMessageBox::question(
-        this,
-        "Confirmation de suppression",
-        QString("Voulez-vous vraiment supprimer cette place id : '%1' ?").arg(id),
+    QMessageBox::StandardButton reply = QMessageBox::question(
+        this, "Confirmation",
+        QString("Voulez-vous vraiment dépublier la place id : '%1' ?").arg(id),
         QMessageBox::Yes | QMessageBox::No
         );
 
     if (reply == QMessageBox::Yes) {
-        gestionnaire.retirer(id);
-        rafraichirTableau();
-        QMessageBox::information(this, "Suppression", "La ressource a été supprimée avec succès !");
+        res->setDisponible(false);
+        mettreAJourTables();
+        gestionnaire.sauvegarder("places.txt");
+        QMessageBox::information(this, "Dépublication", "La place a été remise comme non publiée !");
     }
 }
 
+// Sauvegarder toutes les places publiées
+void MainWindow::on_btnSauvegarder_clicked()
+{
+    // gestionnaire.vider(); // vider l'ancien contenu
+    // for (auto& p : placesPubliees)
+    //     gestionnaire.ajouter(p); // ajouter toutes les places publiées
 
-//Fonction pour sauvegarder la publication dans le fichier places.txt
-
-void MainWindow::on_btnSauvegarder_clicked(){
-    if (gestionnaire.sauvegarder("places.txt")) {
+    if (gestionnaire.sauvegarder("places.txt"))
         QMessageBox::information(this, "Succès", "Données sauvegardées !");
-    }
+    else
+        QMessageBox::warning(this, "Erreur", "Échec de la sauvegarde !");
 }
