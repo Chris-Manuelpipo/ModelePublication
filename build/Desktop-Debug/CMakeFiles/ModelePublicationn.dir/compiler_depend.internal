@@ -7692,6 +7692,7 @@ CMakeFiles/ModelePublicationn.dir/accueil.cpp.o
 
 CMakeFiles/ModelePublicationn.dir/clientwindow.cpp.o
  /home/chris-manuel/Bureau/ModelePublicationn/clientwindow.cpp
+ /home/chris-manuel/Bureau/ModelePublicationn/accueil.h
  /home/chris-manuel/Bureau/ModelePublicationn/build/Desktop-Debug/ModelePublicationn_autogen/include/ui_clientwindow.h
  /home/chris-manuel/Bureau/ModelePublicationn/clientwindow.h
  /home/chris-manuel/Bureau/ModelePublicationn/include/Publication.hpp
@@ -8615,6 +8616,7 @@ CMakeFiles/ModelePublicationn.dir/main.cpp.o
 
 CMakeFiles/ModelePublicationn.dir/mainwindow.cpp.o
  /home/chris-manuel/Bureau/ModelePublicationn/mainwindow.cpp
+ /home/chris-manuel/Bureau/ModelePublicationn/accueil.h
  /home/chris-manuel/Bureau/ModelePublicationn/build/Desktop-Debug/ModelePublicationn_autogen/include/ui_mainwindow.h
  /home/chris-manuel/Bureau/ModelePublicationn/include/Publication.hpp
  /home/chris-manuel/Bureau/ModelePublicationn/include/Ressource.hpp

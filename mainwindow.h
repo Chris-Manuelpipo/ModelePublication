@@ -25,6 +25,8 @@ private slots:
     //void on_tableRessources_2_itemSelectionChanged();
     //void on_btnResetFiltres_clicked();
 
+    void on_pushButton_clicked();
+
 private:
     int idEnCours = -1;
     Ui::MainWindow *ui;

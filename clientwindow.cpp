@@ -1,5 +1,6 @@
 #include "clientwindow.h"
 #include "ui_clientwindow.h"
+#include "accueil.h"
 
 ClientWindow::ClientWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -189,5 +190,14 @@ void ClientWindow::on_btnResetFiltres_3_clicked()
     }
     ui->inputRecherche_3->clear();
     filtrerTableau();
+}
+
+
+void ClientWindow::on_pushButton_clicked()
+{
+    accueil *acc = new accueil();
+    acc->show();
+    this->close();
+
 }
 

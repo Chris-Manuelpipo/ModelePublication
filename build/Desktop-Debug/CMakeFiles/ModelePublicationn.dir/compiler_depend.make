@@ -7687,6 +7687,7 @@ CMakeFiles/ModelePublicationn.dir/accueil.cpp.o: /home/chris-manuel/Bureau/Model
   /usr/lib/gcc/x86_64-linux-gnu/13/include/syslimits.h
 
 CMakeFiles/ModelePublicationn.dir/clientwindow.cpp.o: /home/chris-manuel/Bureau/ModelePublicationn/clientwindow.cpp \
+  /home/chris-manuel/Bureau/ModelePublicationn/accueil.h \
   ModelePublicationn_autogen/include/ui_clientwindow.h \
   /home/chris-manuel/Bureau/ModelePublicationn/clientwindow.h \
   /home/chris-manuel/Bureau/ModelePublicationn/include/Publication.hpp \
@@ -8608,6 +8609,7 @@ CMakeFiles/ModelePublicationn.dir/main.cpp.o: /home/chris-manuel/Bureau/ModelePu
   /usr/lib/gcc/x86_64-linux-gnu/13/include/syslimits.h
 
 CMakeFiles/ModelePublicationn.dir/mainwindow.cpp.o: /home/chris-manuel/Bureau/ModelePublicationn/mainwindow.cpp \
+  /home/chris-manuel/Bureau/ModelePublicationn/accueil.h \
   ModelePublicationn_autogen/include/ui_mainwindow.h \
   /home/chris-manuel/Bureau/ModelePublicationn/include/Publication.hpp \
   /home/chris-manuel/Bureau/ModelePublicationn/include/Ressource.hpp \

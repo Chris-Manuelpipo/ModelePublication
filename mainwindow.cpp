@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
+#include "accueil.h"
 #include <QMessageBox>
 
 MainWindow::MainWindow(QWidget *parent)
@@ -7,11 +8,11 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-    // Charger les places depuis le fichier
-    gestionnaire.charger("places.txt");
-
     // Initialiser les listes si nécessaire
     initialiserPlaces();
+
+    // Charger les places depuis le fichier
+    gestionnaire.charger("places.txt");
 
     // Mettre à jour les tableaux UI
     mettreAJourTables();
@@ -48,11 +49,21 @@ void MainWindow::initialiserPlaces()
         return; // déjà initialisé
 
     placesNonPubliees = {
-        Ressource("A", "1", 1, 50000, false),
-        Ressource("A", "1", 2, 50000, false),
-        Ressource("B", "2", 1, 30000, false),
-        Ressource("C", "3", 5, 10000, false)
+        Ressource("VIP", "A", 2, 50000, false),
+        Ressource("VVIP", "B", 2, 50000, false),
+        Ressource("STANDARD", "A", 1, 30000, false),
+        Ressource("CLASSIC", "C", 5, 10000, false),
+        Ressource("VIP", "A", 4, 50000, false),
+        Ressource("VVIP", "B", 3, 50000, false),
+        Ressource("STANDARD", "A", 1, 30000, false),
+        Ressource("CLASSIC", "C", 3, 10000, false),
+        Ressource("VIP", "A", 5, 50000, false),
+        Ressource("VVIP", "B", 5, 50000, false),
+        Ressource("STANDARD", "A", 5, 30000, false),
+        Ressource("CLASSIC", "C", 2, 10000, false)
+
     };
+
 }
 
 // Mettre à jour les deux tableaux
@@ -84,6 +95,13 @@ void MainWindow::mettreAJourTables()
     // ----- Table non publiées -----
     ui->tableRessources_2->clear();
     int nbNonPub = 0;
+    //Pour mettre les places non publiees dans dans le tableau
+    for (const auto& r : placesNonPubliees){
+
+        if (gestionnaire.publier(r)) ++nbNonPub; ;
+    }
+
+
     for (const auto& r : ressources)
         if (!r.estDisponible()) ++nbNonPub;
     ui->tableRessources_2->setRowCount(nbNonPub);
@@ -165,3 +183,12 @@ void MainWindow::on_btnSauvegarder_clicked()
     else
         QMessageBox::warning(this, "Erreur", "Échec de la sauvegarde !");
 }
+
+void MainWindow::on_pushButton_clicked()
+{
+    accueil *acc = new accueil();
+    acc->show();
+    this->close();
+
+}
+

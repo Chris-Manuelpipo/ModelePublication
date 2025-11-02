@@ -29,6 +29,8 @@ private slots:
 
     void on_btnResetFiltres_3_clicked();
 
+    void on_pushButton_clicked();
+
 private:
     Ui::ClientWindow *ui;
     Publication gestionnaire;

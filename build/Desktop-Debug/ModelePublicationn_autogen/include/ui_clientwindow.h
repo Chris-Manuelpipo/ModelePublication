@@ -30,10 +30,12 @@ class Ui_ClientWindow
 {
 public:
     QWidget *centralwidget;
-    QGridLayout *gridLayout_8;
+    QTableWidget *tableRessources;
+    QPushButton *pushButton;
+    QWidget *widget;
     QGridLayout *gridLayout_7;
     QLineEdit *inputRecherche_3;
-    QTableWidget *tableRessources;
+    QWidget *widget1;
     QGridLayout *gridLayout_9;
     QGroupBox *groupSections_3;
     QGroupBox *groupPrix_3;
@@ -50,27 +52,12 @@ public:
         ClientWindow->resize(1312, 746);
         centralwidget = new QWidget(ClientWindow);
         centralwidget->setObjectName("centralwidget");
-        gridLayout_8 = new QGridLayout(centralwidget);
-        gridLayout_8->setObjectName("gridLayout_8");
-        gridLayout_8->setHorizontalSpacing(75);
-        gridLayout_8->setVerticalSpacing(35);
-        gridLayout_8->setContentsMargins(50, 50, 50, 50);
-        gridLayout_7 = new QGridLayout();
-        gridLayout_7->setObjectName("gridLayout_7");
-        gridLayout_7->setSizeConstraint(QLayout::SetDefaultConstraint);
-        inputRecherche_3 = new QLineEdit(centralwidget);
-        inputRecherche_3->setObjectName("inputRecherche_3");
-
-        gridLayout_7->addWidget(inputRecherche_3, 0, 0, 1, 1);
-
-
-        gridLayout_8->addLayout(gridLayout_7, 0, 0, 1, 1);
-
         tableRessources = new QTableWidget(centralwidget);
         if (tableRessources->columnCount() < 6)
             tableRessources->setColumnCount(6);
         tableRessources->setObjectName("tableRessources");
         tableRessources->setEnabled(true);
+        tableRessources->setGeometry(QRect(50, 174, 660, 531));
         tableRessources->setMinimumSize(QSize(660, 531));
         tableRessources->setMaximumSize(QSize(661, 16777215));
         tableRessources->viewport()->setProperty("cursor", QVariant(QCursor(Qt::ArrowCursor)));
@@ -91,35 +78,50 @@ public:
         tableRessources->verticalHeader()->setHighlightSections(true);
         tableRessources->verticalHeader()->setProperty("showSortIndicator", QVariant(false));
         tableRessources->verticalHeader()->setStretchLastSection(false);
+        pushButton = new QPushButton(centralwidget);
+        pushButton->setObjectName("pushButton");
+        pushButton->setGeometry(QRect(10, 10, 88, 26));
+        widget = new QWidget(centralwidget);
+        widget->setObjectName("widget");
+        widget->setGeometry(QRect(50, 111, 661, 51));
+        gridLayout_7 = new QGridLayout(widget);
+        gridLayout_7->setObjectName("gridLayout_7");
+        gridLayout_7->setSizeConstraint(QLayout::SetDefaultConstraint);
+        gridLayout_7->setContentsMargins(0, 0, 0, 0);
+        inputRecherche_3 = new QLineEdit(widget);
+        inputRecherche_3->setObjectName("inputRecherche_3");
 
-        gridLayout_8->addWidget(tableRessources, 1, 0, 1, 1);
+        gridLayout_7->addWidget(inputRecherche_3, 0, 0, 1, 1);
 
-        gridLayout_9 = new QGridLayout();
+        widget1 = new QWidget(centralwidget);
+        widget1->setObjectName("widget1");
+        widget1->setGeometry(QRect(820, 190, 481, 491));
+        gridLayout_9 = new QGridLayout(widget1);
         gridLayout_9->setObjectName("gridLayout_9");
         gridLayout_9->setHorizontalSpacing(20);
         gridLayout_9->setVerticalSpacing(32);
-        gridLayout_9->setContentsMargins(8, 8, -1, -1);
-        groupSections_3 = new QGroupBox(centralwidget);
+        gridLayout_9->setContentsMargins(8, 8, 0, 0);
+        groupSections_3 = new QGroupBox(widget1);
         groupSections_3->setObjectName("groupSections_3");
         groupSections_3->setAlignment(Qt::AlignCenter);
 
         gridLayout_9->addWidget(groupSections_3, 1, 0, 1, 1);
 
-        groupPrix_3 = new QGroupBox(centralwidget);
+        groupPrix_3 = new QGroupBox(widget1);
         groupPrix_3->setObjectName("groupPrix_3");
         groupPrix_3->setEnabled(true);
         groupPrix_3->setAlignment(Qt::AlignCenter);
 
         gridLayout_9->addWidget(groupPrix_3, 1, 2, 1, 1);
 
-        groupRangees_3 = new QGroupBox(centralwidget);
+        groupRangees_3 = new QGroupBox(widget1);
         groupRangees_3->setObjectName("groupRangees_3");
         groupRangees_3->setContextMenuPolicy(Qt::DefaultContextMenu);
         groupRangees_3->setAlignment(Qt::AlignCenter);
 
         gridLayout_9->addWidget(groupRangees_3, 1, 1, 1, 1);
 
-        btnResetFiltres_3 = new QPushButton(centralwidget);
+        btnResetFiltres_3 = new QPushButton(widget1);
         btnResetFiltres_3->setObjectName("btnResetFiltres_3");
         QSizePolicy sizePolicy(QSizePolicy::Minimum, QSizePolicy::Maximum);
         sizePolicy.setHorizontalStretch(0);
@@ -134,7 +136,7 @@ public:
 
         gridLayout_9->addWidget(btnResetFiltres_3, 2, 1, 1, 1);
 
-        Filtrage_3 = new QLabel(centralwidget);
+        Filtrage_3 = new QLabel(widget1);
         Filtrage_3->setObjectName("Filtrage_3");
         Filtrage_3->setTabletTracking(false);
         Filtrage_3->setLayoutDirection(Qt::LeftToRight);
@@ -159,13 +161,6 @@ public:
         gridLayout_9->setRowMinimumHeight(0, 5);
         gridLayout_9->setRowMinimumHeight(1, 150);
         gridLayout_9->setRowMinimumHeight(2, 40);
-
-        gridLayout_8->addLayout(gridLayout_9, 1, 1, 1, 1);
-
-        gridLayout_8->setRowStretch(0, 4);
-        gridLayout_8->setRowStretch(1, 1);
-        gridLayout_8->setColumnMinimumWidth(0, 1);
-        gridLayout_8->setColumnMinimumWidth(1, 1);
         ClientWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(ClientWindow);
         menubar->setObjectName("menubar");
@@ -186,6 +181,7 @@ public:
     void retranslateUi(QMainWindow *ClientWindow)
     {
         ClientWindow->setWindowTitle(QCoreApplication::translate("ClientWindow", "Publication des places d'un stade de football", nullptr));
+        pushButton->setText(QCoreApplication::translate("ClientWindow", "Retour", nullptr));
         inputRecherche_3->setPlaceholderText(QCoreApplication::translate("ClientWindow", "Rechercher une place", nullptr));
         groupSections_3->setTitle(QCoreApplication::translate("ClientWindow", "Section", nullptr));
         groupPrix_3->setTitle(QCoreApplication::translate("ClientWindow", "Prix", nullptr));
