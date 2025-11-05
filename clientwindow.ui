@@ -20,8 +20,8 @@
     </property>
     <property name="geometry">
      <rect>
-      <x>50</x>
-      <y>174</y>
+      <x>630</x>
+      <y>160</y>
       <width>660</width>
       <height>531</height>
      </rect>
@@ -111,12 +111,16 @@
     <property name="text">
      <string>Retour</string>
     </property>
+    <property name="icon">
+     <iconset resource="ressources.qrc">
+      <normaloff>:/new/prefix1/icons/arrowback.png</normaloff>:/new/prefix1/icons/arrowback.png</iconset>
+    </property>
    </widget>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
-      <x>50</x>
-      <y>111</y>
+      <x>630</x>
+      <y>110</y>
       <width>661</width>
       <height>51</height>
      </rect>
@@ -128,17 +132,17 @@
      <item row="0" column="0">
       <widget class="QLineEdit" name="inputRecherche_3">
        <property name="placeholderText">
-        <string>Rechercher une place</string>
+        <string>Rechercher une siège</string>
        </property>
       </widget>
      </item>
     </layout>
    </widget>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget_2">
     <property name="geometry">
      <rect>
-      <x>820</x>
-      <y>190</y>
+      <x>80</x>
+      <y>130</y>
       <width>481</width>
       <height>491</height>
      </rect>

@@ -13,6 +13,8 @@
 
 namespace Ui {
 class ClientWindow;
+
+
 }
 
 class ClientWindow : public QMainWindow

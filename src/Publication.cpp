@@ -63,7 +63,7 @@ bool Publication::retirer(int id) {
     }
     std::cout << " Place non trouvée." << std::endl;
     return false;
-}
+}//TODO : enlever
 
 bool Publication::modifier(int id, const Ressource &nouvelle) {
     for (auto &r : ressources) {
@@ -76,7 +76,7 @@ bool Publication::modifier(int id, const Ressource &nouvelle) {
         }
     }
     return false;
-}
+} //TODO : enlever
 
 
 Ressource* Publication::rechercher(int id) {
@@ -109,7 +109,7 @@ void Publication::afficherToutes() const {
                   << " | Disponible: " << (res.estDisponible() ? "Oui" : "Non")
                   << "\n";
     }
-}
+}//TODO : enlever
 
 //Sauvegarder et charger
 

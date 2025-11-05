@@ -32,10 +32,10 @@ public:
     QWidget *centralwidget;
     QTableWidget *tableRessources;
     QPushButton *pushButton;
-    QWidget *widget;
+    QWidget *layoutWidget;
     QGridLayout *gridLayout_7;
     QLineEdit *inputRecherche_3;
-    QWidget *widget1;
+    QWidget *layoutWidget_2;
     QGridLayout *gridLayout_9;
     QGroupBox *groupSections_3;
     QGroupBox *groupPrix_3;
@@ -57,7 +57,7 @@ public:
             tableRessources->setColumnCount(6);
         tableRessources->setObjectName("tableRessources");
         tableRessources->setEnabled(true);
-        tableRessources->setGeometry(QRect(50, 174, 660, 531));
+        tableRessources->setGeometry(QRect(630, 160, 660, 531));
         tableRessources->setMinimumSize(QSize(660, 531));
         tableRessources->setMaximumSize(QSize(661, 16777215));
         tableRessources->viewport()->setProperty("cursor", QVariant(QCursor(Qt::ArrowCursor)));
@@ -81,62 +81,65 @@ public:
         pushButton = new QPushButton(centralwidget);
         pushButton->setObjectName("pushButton");
         pushButton->setGeometry(QRect(10, 10, 88, 26));
-        widget = new QWidget(centralwidget);
-        widget->setObjectName("widget");
-        widget->setGeometry(QRect(50, 111, 661, 51));
-        gridLayout_7 = new QGridLayout(widget);
+        QIcon icon;
+        icon.addFile(QString::fromUtf8(":/new/prefix1/icons/arrowback.png"), QSize(), QIcon::Normal, QIcon::Off);
+        pushButton->setIcon(icon);
+        layoutWidget = new QWidget(centralwidget);
+        layoutWidget->setObjectName("layoutWidget");
+        layoutWidget->setGeometry(QRect(630, 110, 661, 51));
+        gridLayout_7 = new QGridLayout(layoutWidget);
         gridLayout_7->setObjectName("gridLayout_7");
         gridLayout_7->setSizeConstraint(QLayout::SetDefaultConstraint);
         gridLayout_7->setContentsMargins(0, 0, 0, 0);
-        inputRecherche_3 = new QLineEdit(widget);
+        inputRecherche_3 = new QLineEdit(layoutWidget);
         inputRecherche_3->setObjectName("inputRecherche_3");
 
         gridLayout_7->addWidget(inputRecherche_3, 0, 0, 1, 1);
 
-        widget1 = new QWidget(centralwidget);
-        widget1->setObjectName("widget1");
-        widget1->setGeometry(QRect(820, 190, 481, 491));
-        gridLayout_9 = new QGridLayout(widget1);
+        layoutWidget_2 = new QWidget(centralwidget);
+        layoutWidget_2->setObjectName("layoutWidget_2");
+        layoutWidget_2->setGeometry(QRect(80, 130, 481, 491));
+        gridLayout_9 = new QGridLayout(layoutWidget_2);
         gridLayout_9->setObjectName("gridLayout_9");
         gridLayout_9->setHorizontalSpacing(20);
         gridLayout_9->setVerticalSpacing(32);
         gridLayout_9->setContentsMargins(8, 8, 0, 0);
-        groupSections_3 = new QGroupBox(widget1);
+        groupSections_3 = new QGroupBox(layoutWidget_2);
         groupSections_3->setObjectName("groupSections_3");
         groupSections_3->setAlignment(Qt::AlignCenter);
 
         gridLayout_9->addWidget(groupSections_3, 1, 0, 1, 1);
 
-        groupPrix_3 = new QGroupBox(widget1);
+        groupPrix_3 = new QGroupBox(layoutWidget_2);
         groupPrix_3->setObjectName("groupPrix_3");
         groupPrix_3->setEnabled(true);
         groupPrix_3->setAlignment(Qt::AlignCenter);
 
         gridLayout_9->addWidget(groupPrix_3, 1, 2, 1, 1);
 
-        groupRangees_3 = new QGroupBox(widget1);
+        groupRangees_3 = new QGroupBox(layoutWidget_2);
         groupRangees_3->setObjectName("groupRangees_3");
         groupRangees_3->setContextMenuPolicy(Qt::DefaultContextMenu);
         groupRangees_3->setAlignment(Qt::AlignCenter);
 
         gridLayout_9->addWidget(groupRangees_3, 1, 1, 1, 1);
 
-        btnResetFiltres_3 = new QPushButton(widget1);
+        btnResetFiltres_3 = new QPushButton(layoutWidget_2);
         btnResetFiltres_3->setObjectName("btnResetFiltres_3");
         QSizePolicy sizePolicy(QSizePolicy::Minimum, QSizePolicy::Maximum);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
         sizePolicy.setHeightForWidth(btnResetFiltres_3->sizePolicy().hasHeightForWidth());
         btnResetFiltres_3->setSizePolicy(sizePolicy);
-        QIcon icon;
-        icon.addFile(QString::fromUtf8(":/new/prefix1/icons/sauvegarde.png"), QSize(), QIcon::Normal, QIcon::Off);
-        btnResetFiltres_3->setIcon(icon);
+        QIcon icon1;
+        icon1.addFile(QString::fromUtf8(":/new/prefix1/icons/sauvegarde.png"), QSize(), QIcon::Normal, QIcon::Off);
+        btnResetFiltres_3->setIcon(icon1);
         btnResetFiltres_3->setAutoDefault(false);
         btnResetFiltres_3->setFlat(false);
 
         gridLayout_9->addWidget(btnResetFiltres_3, 2, 1, 1, 1);
 
-        Filtrage_3 = new QLabel(widget1);
+        Filtrage_3 = new QLabel(layoutWidget_2);
         Filtrage_3->setObjectName("Filtrage_3");
         Filtrage_3->setTabletTracking(false);
         Filtrage_3->setLayoutDirection(Qt::LeftToRight);
@@ -182,7 +185,7 @@ public:
     {
         ClientWindow->setWindowTitle(QCoreApplication::translate("ClientWindow", "Publication des places d'un stade de football", nullptr));
         pushButton->setText(QCoreApplication::translate("ClientWindow", "Retour", nullptr));
-        inputRecherche_3->setPlaceholderText(QCoreApplication::translate("ClientWindow", "Rechercher une place", nullptr));
+        inputRecherche_3->setPlaceholderText(QCoreApplication::translate("ClientWindow", "Rechercher une si\303\250ge", nullptr));
         groupSections_3->setTitle(QCoreApplication::translate("ClientWindow", "Section", nullptr));
         groupPrix_3->setTitle(QCoreApplication::translate("ClientWindow", "Prix", nullptr));
         groupRangees_3->setTitle(QCoreApplication::translate("ClientWindow", "Rang\303\251e", nullptr));

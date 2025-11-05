@@ -1,11 +1,9 @@
 #include "Ressource.hpp"
 
-
 //Initialisation du compteur à O
 
 int Ressource::compteur = 0;
 
-// Constructeur complet
 Ressource::Ressource(const std::string& section,
                      const std::string& rangee,
                      int siege,
@@ -48,7 +46,7 @@ void Ressource::setSiege(int s) { siege = s; }
            " | Siège: " + std::to_string(siege) +
            " | Prix: " + std::to_string(prix) + " FCFA" +
            " | Disponible: " + (disponible ? "Oui" : "Non");
-    }
+    }//TODO : enlever
 
 
 

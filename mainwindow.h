@@ -26,6 +26,8 @@ private slots:
     //void on_btnResetFiltres_clicked();
 
     void on_pushButton_clicked();
+    //selecteur
+    void filtrerPlaces();
 
 private:
     int idEnCours = -1;
@@ -34,6 +36,7 @@ private:
     void initialiserPlaces();
     void rafraichirTableau();
     void mettreAJourTables();
+    void remplirSelecteursDepuisPlaces();
     QVector<Ressource> placesNonPubliees;
     QVector<Ressource> placesPubliees;
 

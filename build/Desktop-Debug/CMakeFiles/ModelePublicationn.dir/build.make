@@ -84,9 +84,12 @@ ModelePublicationn_autogen/EWIEGA46WW/qrc_ressources.cpp: /home/chris-manuel/Bur
 ModelePublicationn_autogen/EWIEGA46WW/qrc_ressources.cpp: /home/chris-manuel/Bureau/ModelePublicationn/icons/sauvegarder.png
 ModelePublicationn_autogen/EWIEGA46WW/qrc_ressources.cpp: /home/chris-manuel/Bureau/ModelePublicationn/icons/sauvegarde.png
 ModelePublicationn_autogen/EWIEGA46WW/qrc_ressources.cpp: /home/chris-manuel/Bureau/ModelePublicationn/icons/modification-au-crayon.png
+ModelePublicationn_autogen/EWIEGA46WW/qrc_ressources.cpp: /home/chris-manuel/Bureau/ModelePublicationn/icons/arrowback.png
 ModelePublicationn_autogen/EWIEGA46WW/qrc_ressources.cpp: /home/chris-manuel/Bureau/ModelePublicationn/icons/suppression.png
+ModelePublicationn_autogen/EWIEGA46WW/qrc_ressources.cpp: /home/chris-manuel/Bureau/ModelePublicationn/icons/stade.png
 ModelePublicationn_autogen/EWIEGA46WW/qrc_ressources.cpp: /home/chris-manuel/Bureau/ModelePublicationn/icons/trash.png
 ModelePublicationn_autogen/EWIEGA46WW/qrc_ressources.cpp: /home/chris-manuel/Bureau/ModelePublicationn/icons/bouton-supprimer.png
+ModelePublicationn_autogen/EWIEGA46WW/qrc_ressources.cpp: /home/chris-manuel/Bureau/ModelePublicationn/icons/stade.jpg
 ModelePublicationn_autogen/EWIEGA46WW/qrc_ressources.cpp: /usr/lib/qt6/libexec/rcc
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/chris-manuel/Bureau/ModelePublicationn/build/Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Automatic RCC for ressources.qrc"
 	/usr/bin/cmake -E cmake_autorcc /home/chris-manuel/Bureau/ModelePublicationn/build/Desktop-Debug/CMakeFiles/ModelePublicationn_autogen.dir/AutoRcc_ressources_EWIEGA46WW_Info.json Debug

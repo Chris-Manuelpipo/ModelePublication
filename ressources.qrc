@@ -9,5 +9,8 @@
         <file>icons/arrow-up.png</file>
         <file>icons/coche.png</file>
         <file>icons/trash.png</file>
+        <file>icons/arrowback.png</file>
+        <file>icons/stade.jpg</file>
+        <file>icons/stade.png</file>
     </qresource>
 </RCC>

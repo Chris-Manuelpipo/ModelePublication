@@ -366,16 +366,8 @@ CMakeFiles/ModelePublicationn.dir/mainwindow.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt6/QtGui/qinputmethod.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qlocale.h \
  /usr/include/x86_64-linux-gnu/qt6/QtGui/qguiapplication_platform.h \
- /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QGridLayout \
- /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qgridlayout.h \
- /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QHBoxLayout \
- /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QHeaderView \
- /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qheaderview.h \
- /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qabstractitemview.h \
- /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qabstractscrollarea.h \
- /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qframe.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qabstractitemmodel.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qitemselectionmodel.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QComboBox \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qcombobox.h \
  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qabstractitemdelegate.h \
  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qstyleoption.h \
  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qabstractspinbox.h \
@@ -386,6 +378,15 @@ CMakeFiles/ModelePublicationn.dir/mainwindow.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qstyle.h \
  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qtabbar.h \
  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qrubberband.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qframe.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qabstractitemmodel.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QGridLayout \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qgridlayout.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QHeaderView \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qheaderview.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qabstractitemview.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qabstractscrollarea.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qitemselectionmodel.h \
  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QLabel \
  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qlabel.h \
  /usr/include/x86_64-linux-gnu/qt6/QtGui/qpicture.h \
@@ -404,6 +405,8 @@ CMakeFiles/ModelePublicationn.dir/mainwindow.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qmenu.h \
  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QPushButton \
  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qpushbutton.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QSplitter \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qsplitter.h \
  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QStatusBar \
  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qstatusbar.h \
  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QTableWidget \
