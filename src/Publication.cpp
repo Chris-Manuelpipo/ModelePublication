@@ -30,8 +30,6 @@ bool Publication::publier(const Ressource& res) {
     return true;
 }
 
-// header
-;
 
 // implementation (exemple simple)
 bool Publication::publierParId(int id, double nouveauPrix) {

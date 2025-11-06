@@ -9,7 +9,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>813</width>
+    <width>862</width>
     <height>569</height>
    </rect>
   </property>
@@ -35,14 +35,24 @@
    <property name="bottomMargin">
     <number>100</number>
    </property>
-   <item row="1" column="0">
+   <item row="5" column="1">
     <widget class="QPushButton" name="btnClient">
      <property name="text">
       <string>Client</string>
      </property>
     </widget>
    </item>
-   <item row="0" column="0">
+   <item row="1" column="1">
+    <widget class="QLabel" name="label">
+     <property name="text">
+      <string>BIENVENUE DANS L'APPLICATION DE PUBLICATION DES PLACES</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="1">
     <widget class="QPushButton" name="btnAdmin">
      <property name="minimumSize">
       <size>
@@ -67,6 +77,16 @@
      </property>
      <property name="flat">
       <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="1">
+    <widget class="QLabel" name="label_2">
+     <property name="text">
+      <string>OUVRIR EN TANT QUE :</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
      </property>
     </widget>
    </item>

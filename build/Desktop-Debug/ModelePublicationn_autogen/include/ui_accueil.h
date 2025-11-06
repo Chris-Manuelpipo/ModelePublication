@@ -12,6 +12,7 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QGridLayout>
+#include <QtWidgets/QLabel>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QWidget>
 
@@ -22,14 +23,16 @@ class Ui_accueil
 public:
     QGridLayout *gridLayout;
     QPushButton *btnClient;
+    QLabel *label;
     QPushButton *btnAdmin;
+    QLabel *label_2;
 
     void setupUi(QWidget *accueil)
     {
         if (accueil->objectName().isEmpty())
             accueil->setObjectName("accueil");
         accueil->setWindowModality(Qt::NonModal);
-        accueil->resize(813, 569);
+        accueil->resize(862, 569);
         accueil->setMinimumSize(QSize(813, 425));
         gridLayout = new QGridLayout(accueil);
         gridLayout->setObjectName("gridLayout");
@@ -37,7 +40,13 @@ public:
         btnClient = new QPushButton(accueil);
         btnClient->setObjectName("btnClient");
 
-        gridLayout->addWidget(btnClient, 1, 0, 1, 1);
+        gridLayout->addWidget(btnClient, 5, 1, 1, 1);
+
+        label = new QLabel(accueil);
+        label->setObjectName("label");
+        label->setAlignment(Qt::AlignCenter);
+
+        gridLayout->addWidget(label, 1, 1, 1, 1);
 
         btnAdmin = new QPushButton(accueil);
         btnAdmin->setObjectName("btnAdmin");
@@ -46,7 +55,13 @@ public:
         btnAdmin->setAutoDefault(false);
         btnAdmin->setFlat(false);
 
-        gridLayout->addWidget(btnAdmin, 0, 0, 1, 1);
+        gridLayout->addWidget(btnAdmin, 3, 1, 1, 1);
+
+        label_2 = new QLabel(accueil);
+        label_2->setObjectName("label_2");
+        label_2->setAlignment(Qt::AlignCenter);
+
+        gridLayout->addWidget(label_2, 2, 1, 1, 1);
 
 
         retranslateUi(accueil);
@@ -61,7 +76,9 @@ public:
     {
         accueil->setWindowTitle(QCoreApplication::translate("accueil", "Publication des places d'un stade de football", nullptr));
         btnClient->setText(QCoreApplication::translate("accueil", "Client", nullptr));
+        label->setText(QCoreApplication::translate("accueil", "BIENVENUE DANS L'APPLICATION DE PUBLICATION DES PLACES", nullptr));
         btnAdmin->setText(QCoreApplication::translate("accueil", "Administrateur", nullptr));
+        label_2->setText(QCoreApplication::translate("accueil", "OUVRIR EN TANT QUE :", nullptr));
     } // retranslateUi
 
 };

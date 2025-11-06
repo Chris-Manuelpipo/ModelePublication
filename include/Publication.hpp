@@ -5,13 +5,13 @@
  
 class Publication {
 private:
-    std::vector<Ressource> ressources; //Liste de ressources(places publiées)
+    std::vector<Ressource>      ressources; //Liste de ressources(places publiées)
     bool existe(const Ressource& res) const; // Vérifie doublon
     
 
 public:
     bool publierParId(int id, double nouveauPrix);
-    bool publier(const Ressource& res); //Fonction de publication; ajoute la place à la liste de places
+    bool publier(const Ressource& res); //Fonction de publication correspondante au modèle mathématique
     bool retirer(int id); // Supprimer une place par son id
     bool modifier(int id, const Ressource &nouvelle);
     Ressource* rechercher(int id);// Rechercher une ressource et simuler la reservation
