@@ -132,7 +132,7 @@
      <item row="0" column="0">
       <widget class="QLineEdit" name="inputRecherche_3">
        <property name="placeholderText">
-        <string>Rechercher une siège</string>
+        <string>Rechercher un siège</string>
        </property>
       </widget>
      </item>

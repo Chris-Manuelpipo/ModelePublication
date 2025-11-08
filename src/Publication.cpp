@@ -18,15 +18,11 @@ bool Publication::existe(const Ressource& res) const {
 
 bool Publication::publier(const Ressource& res) {
     if (existe(res)) {
-        std::cout << " Place déjà publiée : Section " << res.getSection()
-                  << ", Rangée " << res.getRangee()
-                  << ", Siège " << res.getSiege() << std::endl;
+
         return false;
     }
     ressources.push_back(res);
-    std::cout << " Place publiée : " << res.getSection()
-                  << ", Rangée " << res.getRangee()
-                  << ", Siège " << res.getSiege() << std::endl;
+
     return true;
 }
 

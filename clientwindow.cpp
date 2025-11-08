@@ -51,12 +51,12 @@ void ClientWindow::afficherPlaces(){
 //Action à la modification du fichier
 void ClientWindow::onFileChanged(const QString &path)
 {
-    qDebug() << "Fichier modifié :" << path;
+    //qDebug() << "Fichier modifié :" << path;
     //Recharger les nouvelles ressources
     gestionnaire.charger("places.txt");
     //afficherPlaces();
     rafraichirTableau();
-    qDebug() << "Places affichées :" << path;
+    //qDebug() << "Places affichées :" << path;
     //on réajoute le fichier au watcher
     watcher->addPath(path);
 }

@@ -1,7 +1,20 @@
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
 #include "accueil.h"
+#include <QPrinter>
+#include <QTextDocument>
+#include <QFileDialog>
+#include <QTextTable>
 #include <QMessageBox>
+// #include <QtCharts>
+// #include <QtCharts/QChartView>
+// #include <QtCharts/QBarSeries>
+// #include <QtCharts/QBarSet>
+// #include <QtCharts/QBarCategoryAxis>
+// #include <QtCharts/QValueAxis>
+
+
+// using namespace QtCharts;
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent), ui(new Ui::MainWindow), idEnCours(-1)
@@ -54,55 +67,95 @@ MainWindow::~MainWindow() {
 }
 
 // Initialisation d'exemple si le fichier est vide
+// void MainWindow::initialiserPlaces()
+// {
+//     if (!placesNonPubliees.empty() || !placesPubliees.empty())
+//         return; // déjà initialisé
+
+//     placesNonPubliees = {
+//         Ressource("VVIP", "A", 1, 50000, false),
+//         Ressource("VVIP", "A", 2, 50000, false),
+//         Ressource("VVIP", "A", 3, 50000, false),
+//         Ressource("VVIP", "A", 4, 50000, false),
+//         Ressource("VVIP", "A", 5, 50000, false),
+//         Ressource("VIP", "A", 1, 30000, false),
+//         Ressource("VIP", "A", 2, 30000, false),
+//         Ressource("VIP", "A", 3, 30000, false),
+//         Ressource("VIP", "A", 4, 30000, false),
+//         Ressource("VIP", "A", 5, 30000, false),
+//         Ressource("VIP", "B", 1, 30000, false),
+//         Ressource("VIP", "B", 2, 30000, false),
+//         Ressource("VIP", "B", 3, 30000, false),
+//         Ressource("VIP", "B", 4, 30000, false),
+//         Ressource("VIP", "B", 5, 30000, false),
+//         Ressource("STANDARD", "A", 1, 30000, false),
+//         Ressource("STANDARD", "A", 2, 30000, false),
+//         Ressource("STANDARD", "A", 3, 30000, false),
+//         Ressource("STANDARD", "A", 4, 30000, false),
+//         Ressource("STANDARD", "A", 5, 30000, false),
+//         Ressource("STANDARD", "B", 1, 30000, false),
+//         Ressource("STANDARD", "B", 2, 30000, false),
+//         Ressource("STANDARD", "B", 3, 30000, false),
+//         Ressource("STANDARD", "B", 4, 30000, false),
+//         Ressource("STANDARD", "B", 5, 30000, false),
+//         Ressource("CLASSIC", "A", 1, 10000, false),
+//         Ressource("CLASSIC", "A", 2, 10000, false),
+//         Ressource("CLASSIC", "A", 3, 10000, false),
+//         Ressource("CLASSIC", "A", 4, 10000, false),
+//         Ressource("CLASSIC", "A", 5, 10000, false),
+//         Ressource("CLASSIC", "B", 1, 10000, false),
+//         Ressource("CLASSIC", "B", 2, 10000, false),
+//         Ressource("CLASSIC", "B", 3, 10000, false),
+//         Ressource("CLASSIC", "B", 4, 10000, false),
+//         Ressource("CLASSIC", "B", 5, 10000, false),
+//         Ressource("CLASSIC", "C", 1, 10000, false),
+//         Ressource("CLASSIC", "C", 2, 10000, false),
+//         Ressource("CLASSIC", "C", 3, 10000, false),
+//         Ressource("CLASSIC", "C", 4, 10000, false),
+//         Ressource("CLASSIC", "C", 5, 10000, false),
+//     };
+
+// }
+
 void MainWindow::initialiserPlaces()
 {
     if (!placesNonPubliees.empty() || !placesPubliees.empty())
         return; // déjà initialisé
 
-    placesNonPubliees = {
-        Ressource("VVIP", "A", 1, 50000, false),
-        Ressource("VVIP", "A", 2, 50000, false),
-        Ressource("VVIP", "A", 3, 50000, false),
-        Ressource("VVIP", "A", 4, 50000, false),
-        Ressource("VVIP", "A", 5, 50000, false),
-        Ressource("VIP", "A", 1, 30000, false),
-        Ressource("VIP", "A", 2, 30000, false),
-        Ressource("VIP", "A", 3, 30000, false),
-        Ressource("VIP", "A", 4, 30000, false),
-        Ressource("VIP", "A", 5, 30000, false),
-        Ressource("VIP", "B", 1, 30000, false),
-        Ressource("VIP", "B", 2, 30000, false),
-        Ressource("VIP", "B", 3, 30000, false),
-        Ressource("VIP", "B", 4, 30000, false),
-        Ressource("VIP", "B", 5, 30000, false),
-        Ressource("STANDARD", "A", 1, 30000, false),
-        Ressource("STANDARD", "A", 2, 30000, false),
-        Ressource("STANDARD", "A", 3, 30000, false),
-        Ressource("STANDARD", "A", 4, 30000, false),
-        Ressource("STANDARD", "A", 5, 30000, false),
-        Ressource("STANDARD", "B", 1, 30000, false),
-        Ressource("STANDARD", "B", 2, 30000, false),
-        Ressource("STANDARD", "B", 3, 30000, false),
-        Ressource("STANDARD", "B", 4, 30000, false),
-        Ressource("STANDARD", "B", 5, 30000, false),
-        Ressource("CLASSIC", "A", 1, 10000, false),
-        Ressource("CLASSIC", "A", 2, 10000, false),
-        Ressource("CLASSIC", "A", 3, 10000, false),
-        Ressource("CLASSIC", "A", 4, 10000, false),
-        Ressource("CLASSIC", "A", 5, 10000, false),
-        Ressource("CLASSIC", "B", 1, 10000, false),
-        Ressource("CLASSIC", "B", 2, 10000, false),
-        Ressource("CLASSIC", "B", 3, 10000, false),
-        Ressource("CLASSIC", "B", 4, 10000, false),
-        Ressource("CLASSIC", "B", 5, 10000, false),
-        Ressource("CLASSIC", "C", 1, 10000, false),
-        Ressource("CLASSIC", "C", 2, 10000, false),
-        Ressource("CLASSIC", "C", 3, 10000, false),
-        Ressource("CLASSIC", "C", 4, 10000, false),
-        Ressource("CLASSIC", "C", 5, 10000, false),
+    struct TypePlace {
+        QString type;
+        double prix;
+        int nombrePlaces;
     };
 
+    // On répartit les 1000 places entre les 4 types
+    QVector<TypePlace> types = {
+        {"VVIP", 50000, 250},
+        {"VIP", 30000, 250},
+        {"STANDARD", 20000, 250},
+        {"CLASSIC", 10000, 250}
+    };
+
+    QStringList rangees = {"A", "B", "C", "D", "E", "F", "G", "H"}; // Exemple de rangées
+    int nbRangees = rangees.size();
+
+    // Génération automatique
+    for (const auto &t : types) {
+        int siegeGlobal = 1;
+        for (int i = 0; i < t.nombrePlaces; ++i) {
+            QString rangee = rangees[i % nbRangees]; // alterner les rangées
+            int siege = (i % 50) + 1;                // 50 sièges max par rangée
+            Ressource res(t.type.toStdString(),
+                          rangee.toStdString(),
+                          siege,
+                          t.prix,
+                          false);
+            placesNonPubliees.push_back(res);
+            siegeGlobal++;
+        }
+    }
 }
+
 
 // Mettre à jour les deux tableaux
 void MainWindow::mettreAJourTables()
@@ -290,3 +343,131 @@ void MainWindow::remplirSelecteursDepuisPlaces()
 
 
 
+
+void MainWindow::on_pdfButton_clicked()
+{
+    // Choisir le fichier PDF
+    QString fileName = QFileDialog::getSaveFileName(this, "Exporter en PDF", "", "*.pdf");
+    if (fileName.isEmpty()) return;
+    if (!fileName.endsWith(".pdf")) fileName += ".pdf";
+
+    // --- Récupération des ressources
+    const auto& ressources = gestionnaire.getRessources();
+
+    int total = ressources.size();
+    int publiees = 0, nonPubliees = 0;
+    QMap<QString, int> placesParSection;
+    QMap<QString, int> placesParRangee;
+
+    double totalPrix = 0;
+
+    for (const auto& r : ressources) {
+        if (r.estDisponible()) publiees++;
+        else nonPubliees++;
+
+        placesParSection[QString::fromStdString(r.getSection())]++;
+        placesParRangee[QString::fromStdString(r.getRangee())]++;
+        totalPrix += r.getPrix();
+    }
+
+    // Map imbriquée : section → (rangée → nombre de places)
+    QMap<QString, QMap<QString, int>> statsSectionRangee;
+
+    // Map pour compter total, publiées et non publiées par section
+    QMap<QString, int> totalParSection;
+    QMap<QString, int> publieesParSection;
+    QMap<QString, int> nonPublieesParSection;
+
+    // Construire les statistiques
+    for (const auto &r : ressources) {
+        QString section = QString::fromStdString(r.getSection());
+        QString rangee = QString::fromStdString(r.getRangee());
+
+        // Compter les places totales et par rangée
+        statsSectionRangee[section][rangee] += 1;
+        totalParSection[section] += 1;
+
+        // Distinguer publiées et non publiées
+        if (r.estDisponible())
+            publieesParSection[section] += 1;
+        else
+            nonPublieesParSection[section] += 1;
+    }
+
+    QString html;
+
+    // === Titre principal ===
+    html += "<div style='text-align:center; margin-bottom:30px;'>";
+    html += "<h1 style='color:#27AE60; font-size:26px; border-bottom:3px solid #27AE60; "
+            "display:inline-block; padding-bottom:6px;'>"
+            "RAPPORT DÉTAILLÉ DES PLACES DU STADE"
+            "</h1>";
+    html += "<p style='font-size:14px; color:#555;'>"
+            "Généré automatiquement par le système de gestion des ressources"
+            "</p>";
+    html += "</div>";
+
+    // === Statistiques générales ===
+    html += "<h2 style='color:#2ECC71;'>Statistiques générales</h2>";
+    html += "<ul>";
+    html += "<li><b>Nombre total de places :</b> " + QString::number(total) + "</li>";
+    html += "<li><b>Places publiées :</b> " + QString::number(publiees) + "</li>";
+    html += "<li><b>Places non publiées :</b> " + QString::number(nonPubliees) + "</li>";
+    html += "<li><b>Prix moyen :</b> " + QString::number(total ? totalPrix / total : 0, 'f', 2) + " FCFA</li>";
+    html += "</ul>";
+
+    // === Statistiques par section et rangée ===
+    html += "<h3 style='color:#27AE60;'>Places par section et par rangée</h3>";
+    for (auto sectionIt = statsSectionRangee.begin(); sectionIt != statsSectionRangee.end(); ++sectionIt) {
+        QString section = sectionIt.key();
+        html += "<h4 style='color:#2ECC71; margin-top:10px;'>" + section + "</h4><ul>";
+
+        html += "<li><b style='color:black;'>Total places :</b> " + QString::number(totalParSection[section]) + "</li>";
+        html += "<li><b style='color:#27AE60;'>Places publiées :</b> " + QString::number(publieesParSection[section]) + "</li>";
+        html += "<li><b style='color:#E74C3C;'>Places non publiées :</b> " + QString::number(nonPublieesParSection[section]) + "</li>";
+
+        const QMap<QString, int> &rangees = sectionIt.value();
+        html += "<li><b>Détail par rangée :</b><ul>";
+        for (auto rangeeIt = rangees.begin(); rangeeIt != rangees.end(); ++rangeeIt) {
+            html += "<li>Rangée <b>" + rangeeIt.key() + "</b> : " +
+                    QString::number(rangeeIt.value()) + " places</li>";
+        }
+        html += "</ul></li>";
+        html += "</ul>";
+    }
+
+
+
+    // Créer l'objet QTextDocument
+    QTextDocument doc;
+
+    html += "<h2 style='color:#2ECC71;'>Liste des places</h2>";
+    html += "<table border='1' cellspacing='0' cellpadding='4' width='100%'>";
+    html += "<tr style='background-color:#27AE60; color:white;'><th>ID</th><th>Section</th><th>Rangée</th><th>Siège</th><th>Prix</th><th>Disponible</th></tr>";
+
+    // Parcourir toutes les ressources (publiées + non publiées)
+    //const auto& ressources = gestionnaire.getRessources();
+    for (const auto &r : ressources) {
+        html += "<tr>";
+        html += "<td>" + QString::number(r.getId()) + "</td>";
+        html += "<td>" + QString::fromStdString(r.getSection()) + "</td>";
+        html += "<td>" + QString::fromStdString(r.getRangee()) + "</td>";
+        html += "<td>" + QString::number(r.getSiege()) + "</td>";
+        html += "<td>" + QString::number(r.getPrix()) + "</td>";
+        html += "<td>" + QString(r.estDisponible() ? "Oui" : "Non") + "</td>";
+        html += "</tr>";
+    }
+    html += "</table>";
+
+    doc.setHtml(html);
+
+    // Configurer l'imprimante PDF
+    QPrinter printer(QPrinter::HighResolution);
+    printer.setOutputFormat(QPrinter::PdfFormat);
+    printer.setOutputFileName(fileName);
+
+    // Générer le PDF
+    doc.print(&printer);
+
+    QMessageBox::information(this, "PDF généré", "Le fichier PDF a été enregistré à: " + fileName);
+}

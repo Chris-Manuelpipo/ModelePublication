@@ -1,130 +1,163 @@
 /* ================================
-   Thème Vert & Blanc - Sombre & Lisible
+   Thème Football Épuré - Vert, Sombre, BLANC VIF
+   (Avec GroupBox style original)
    ================================ */
 
-QMainWindow {
-    background-color: #2C2F33; /* gris très foncé pour le fond principal */
+/* --- Configuration Générale --- */
+* {
+    font-family: "Segoe UI", "Helvetica", sans-serif;
+    color: #FFFFFF; /* BLANC PUR pour tout le texte par défaut */
 }
 
-/* Titres principaux */
-QLabel#label, QLabel#label_2, QLabel#label_3, QLabel#label_4 {
-    color: #2ECC71; /* vert vif pour les titres */
+QMainWindow {
+    background-color: #2C2F33; /* gris très foncé (fond principal) */
+}
+
+/* --- Labels et Titres --- */
+QLabel {
+    color: #FFFFFF; /* Blanc pur */
+    font-size: 14px;
+    background-color: transparent;
+}
+
+/* Titres principaux (plus épurés, avec un soulignage d'accent) */
+QLabel#label, QLabel#label_2, QLabel#label_3, QLabel#label_4, QLabel#Filtrage_3 {
+    color: #2ECC71; /* vert vif */
     font-weight: bold;
     font-size: 18px;
+    border-bottom: 2px solid #27AE60; /* Ligne de séparation propre */
+    padding-bottom: 4px;
+    margin-bottom: 5px; /* Espace après le titre */
 }
 
-/* Labels secondaires */
-QLabel {
-    color: #ECF0F1; /* blanc cassé pour le texte */
-    font-size: 14px;
-}
-
-/* Boutons */
+/* --- Boutons --- */
 QPushButton {
     background-color: #27AE60; /* vert foncé */
-    color: #FFFFFF;
-    border: 2px solid #1E8449;
-    border-radius: 8px;
-    padding: 6px 12px;
+    color: #FFFFFF; /* Blanc pur (déjà le cas) */
+    border: none;
+    border-radius: 6px;
+    padding: 8px 14px;
     font-weight: bold;
+    font-size: 14px;
+    min-height: 20px;
 }
 
 QPushButton:hover {
-    background-color: #2ECC71; /* vert vif au hover */
+    background-color: #2ECC71;
 }
 
 QPushButton:pressed {
-    background-color: #1E8449; /* vert foncé lors du clic */
+    background-color: #1E8449;
 }
 
-/* Champs de saisie */
-QLineEdit {
-    border: 2px solid #27AE60;
-    border-radius: 6px;
-    padding: 4px;
-    background-color: #3A3D41; /* gris foncé pour le champ */
-    color: #ECF0F1;
-}
-
-QLineEdit:focus {
-    border-color: #2ECC71;
-    background-color: #2C2F33;
-}
-
-/* ComboBox */
-QComboBox {
-    border: 2px solid #27AE60;
-    border-radius: 6px;
-    padding: 4px;
+/* --- Champs de saisie et ComboBox --- */
+QLineEdit, QComboBox {
+    border: 1px solid #4A4E52;
+    border-radius: 5px;
+    padding: 6px;
     background-color: #3A3D41;
-    color: #ECF0F1;
+    color: #FFFFFF; /* Blanc pur */
+    min-height: 20px;
 }
 
+QLineEdit:focus, QComboBox:focus {
+    border-color: #2ECC71;
+    background-color: #404448;
+}
+
+/* Style de la liste déroulante ComboBox */
 QComboBox QAbstractItemView {
     background-color: #2C2F33;
-    color: #ECF0F1;
+    color: #FFFFFF; /* Blanc pur */
+    border: 1px solid #4A4E52;
     selection-background-color: #27AE60;
     selection-color: #FFFFFF;
 }
 
-/* GroupBox (Section, Rangée, Prix) */
+QComboBox::drop-down {
+    border: none;
+    width: 20px;
+}
+
+/* --- GroupBox (Section, Rangée, Prix) - VOTRE STYLE RESTAURÉ --- */
 QGroupBox {
     border: 2px solid #27AE60;
     border-radius: 8px;
     margin-top: 10px;
     background-color: #33373B;
-    color: #2ECC71;
+    color: #2ECC71; /* Titre du groupe reste vert */
     font-weight: bold;
 }
 
-QGroupBox:title {
+QGroupBox::title {
     subcontrol-origin: margin;
     subcontrol-position: top center;
     padding: 0 6px;
 }
 
-/* Radio boutons */
+/* --- Radio boutons --- */
 QRadioButton {
-    color: #ECF0F1;
+    color: #FFFFFF; /* Blanc pur */
     font-weight: 500;
+    padding: 2px;
+}
+
+QRadioButton::indicator {
+    border: 2px solid #888888;
+    border-radius: 8px;
+    background-color: transparent;
+    width: 12px;
+    height: 12px;
+}
+
+QRadioButton::indicator:hover {
+    border-color: #2ECC71;
 }
 
 QRadioButton::indicator:checked {
     background-color: #27AE60;
-    border: 2px solid #1E8449;
+    border-color: #27AE60;
 }
 
-/* Table (QTableWidget) */
+
+/* --- Table (QTableWidget) --- */
 QTableWidget {
-    background-color: #33373B;
-    alternate-background-color: #2C2F33;
-    border: 2px solid #27AE60;
-    gridline-color: #27AE60;
-    color: #ECF0F1;
+    background-color: #2C2F33;
+    alternate-background-color: #33373B;
+    border: 1px solid #4A4E52;
+    gridline-color: #4A4E52;
+    color: #FFFFFF; /* Blanc pur */
     selection-background-color: #2ECC71;
-    selection-color: #FFFFFF;
+    selection-color: #121212;
     font-size: 13px;
 }
 
+/* En-tête de table */
 QHeaderView::section {
-    background-color: #27AE60;
-    color: #FFFFFF;
+    background-color: #3A3D41;
+    color: #FFFFFF; /* Blanc pur (déjà le cas) */
     font-weight: bold;
     border: none;
-    padding: 4px;
+    border-bottom: 2px solid #27AE60;
+    padding: 8px 4px;
 }
 
-/* Barre de menu */
+/* --- Barres de Menu et Statut --- */
 QMenuBar {
-    background-color: #27AE60;
-    color: #FFFFFF;
+    background-color: #2C2F33;
+    color: #FFFFFF; /* Blanc pur */
+    border-bottom: 1px solid #4A4E52;
+}
+
+QMenuBar::item {
+    padding: 4px 10px;
 }
 
 QMenuBar::item:selected {
-    background-color: #2ECC71;
+    background-color: #27AE60;
+    color: #FFFFFF;
 }
 
-/* Barre de statut */
 QStatusBar {
     background-color: #2C2F33;
     color: #2ECC71;

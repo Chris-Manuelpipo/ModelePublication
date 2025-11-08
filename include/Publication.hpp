@@ -5,7 +5,7 @@
  
 class Publication {
 private:
-    std::vector<Ressource>      ressources; //Liste de ressources(places publiées)
+    std::vector<Ressource>ressources; //Liste de ressources(places publiées)
     bool existe(const Ressource& res) const; // Vérifie doublon
     
 

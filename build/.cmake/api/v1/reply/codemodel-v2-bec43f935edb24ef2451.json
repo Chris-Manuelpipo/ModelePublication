@@ -1,0 +1,78 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Build type-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Build type",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "ModelePublicationn",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "ModelePublicationn::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ModelePublicationn-Build type-2521892e4e6f96db51a7.json",
+					"name" : "ModelePublicationn",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ModelePublicationn_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ModelePublicationn_autogen-Build type-b35a9ba5a9d71b36baeb.json",
+					"name" : "ModelePublicationn_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ModelePublicationn_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ModelePublicationn_autogen_timestamp_deps-Build type-b7ef485b24c5ecfff9a7.json",
+					"name" : "ModelePublicationn_autogen_timestamp_deps",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/chris-manuel/Bureau/bureau/ModelePublicationn/build",
+		"source" : "/home/chris-manuel/Bureau/bureau/ModelePublicationn"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}

@@ -25,9 +25,9 @@ int main(int argc, char *argv[])
     if (styleFile.open(QFile::ReadOnly)) {
         QString style(styleFile.readAll());
         a.setStyleSheet(style);
-        qDebug() << "Style chargé !";
+        //qDebug() << "Style chargé !";
     }else {
-        qDebug() << "Impossible d’ouvrir le style";
+        //qDebug() << "Impossible d’ouvrir le style";
     }
 
     // MainWindow w;

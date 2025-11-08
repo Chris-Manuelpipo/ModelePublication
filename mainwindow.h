@@ -29,6 +29,8 @@ private slots:
     //selecteur
     void filtrerPlaces();
 
+    void on_pdfButton_clicked();
+
 private:
     int idEnCours = -1;
     Ui::MainWindow *ui;

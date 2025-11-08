@@ -1,0 +1,34 @@
+{
+	"BUILD_DIR" : "/home/chris-manuel/Bureau/bureau/ModelePublicationn/build/ModelePublicationn_autogen",
+	"CMAKE_BINARY_DIR" : "/home/chris-manuel/Bureau/bureau/ModelePublicationn/build",
+	"CMAKE_CURRENT_BINARY_DIR" : "/home/chris-manuel/Bureau/bureau/ModelePublicationn/build",
+	"CMAKE_CURRENT_SOURCE_DIR" : "/home/chris-manuel/Bureau/bureau/ModelePublicationn",
+	"CMAKE_SOURCE_DIR" : "/home/chris-manuel/Bureau/bureau/ModelePublicationn",
+	"GENERATOR" : "Unix Makefiles",
+	"INCLUDE_DIR" : "/home/chris-manuel/Bureau/bureau/ModelePublicationn/build/ModelePublicationn_autogen/include",
+	"INPUTS" : 
+	[
+		"/home/chris-manuel/Bureau/bureau/ModelePublicationn/style.qss",
+		"/home/chris-manuel/Bureau/bureau/ModelePublicationn/icons/coche.png",
+		"/home/chris-manuel/Bureau/bureau/ModelePublicationn/icons/arrow-up.png",
+		"/home/chris-manuel/Bureau/bureau/ModelePublicationn/icons/sauvegarder.png",
+		"/home/chris-manuel/Bureau/bureau/ModelePublicationn/icons/sauvegarde.png",
+		"/home/chris-manuel/Bureau/bureau/ModelePublicationn/icons/modification-au-crayon.png",
+		"/home/chris-manuel/Bureau/bureau/ModelePublicationn/icons/arrowback.png",
+		"/home/chris-manuel/Bureau/bureau/ModelePublicationn/icons/suppression.png",
+		"/home/chris-manuel/Bureau/bureau/ModelePublicationn/icons/stade.png",
+		"/home/chris-manuel/Bureau/bureau/ModelePublicationn/icons/trash.png",
+		"/home/chris-manuel/Bureau/bureau/ModelePublicationn/icons/bouton-supprimer.png",
+		"/home/chris-manuel/Bureau/bureau/ModelePublicationn/icons/stade.jpg"
+	],
+	"LOCK_FILE" : "/home/chris-manuel/Bureau/bureau/ModelePublicationn/build/CMakeFiles/ModelePublicationn_autogen.dir/AutoRcc_ressources_EWIEGA46WW_Lock.lock",
+	"MULTI_CONFIG" : false,
+	"OPTIONS" : [ "-name", "ressources" ],
+	"OUTPUT_CHECKSUM" : "EWIEGA46WW",
+	"OUTPUT_NAME" : "qrc_ressources.cpp",
+	"RCC_EXECUTABLE" : "/usr/lib/qt6/libexec/rcc",
+	"RCC_LIST_OPTIONS" : [ "--list" ],
+	"SETTINGS_FILE" : "/home/chris-manuel/Bureau/bureau/ModelePublicationn/build/CMakeFiles/ModelePublicationn_autogen.dir/AutoRcc_ressources_EWIEGA46WW_Used.txt",
+	"SOURCE" : "/home/chris-manuel/Bureau/bureau/ModelePublicationn/ressources.qrc",
+	"VERBOSITY" : 0
+}
