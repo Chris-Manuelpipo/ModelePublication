@@ -32,13 +32,6 @@ MainWindow::MainWindow(QWidget *parent)
     //Mettre à jour les tableaux UI
     mettreAJourTables();
 
-
-
-
-    //Rendre les champs non modifiables sauf le prix
-    // ui->inputSection->setReadOnly(true);
-    // ui->inputRangee->setReadOnly(true);
-    // ui->inputSiege->setReadOnly(true);
     ui->inputPrix->setReadOnly(false); //Prix reste modifiable
 
     //Remplir le formulaire quand une place non publiée est sélectionnée
@@ -57,66 +50,12 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->comboBox, &QComboBox::currentTextChanged, this, &MainWindow::filtrerPlaces);
     connect(ui->comboBox_2, &QComboBox::currentTextChanged, this, &MainWindow::filtrerPlaces);
     connect(ui->comboBox_3, &QComboBox::currentTextChanged, this, &MainWindow::filtrerPlaces);
-
-
     idEnCours = -1; // aucune sélection au départ
 }
 
 MainWindow::~MainWindow() {
     delete ui;
 }
-
-// Initialisation d'exemple si le fichier est vide
-// void MainWindow::initialiserPlaces()
-// {
-//     if (!placesNonPubliees.empty() || !placesPubliees.empty())
-//         return; // déjà initialisé
-
-//     placesNonPubliees = {
-//         Ressource("VVIP", "A", 1, 50000, false),
-//         Ressource("VVIP", "A", 2, 50000, false),
-//         Ressource("VVIP", "A", 3, 50000, false),
-//         Ressource("VVIP", "A", 4, 50000, false),
-//         Ressource("VVIP", "A", 5, 50000, false),
-//         Ressource("VIP", "A", 1, 30000, false),
-//         Ressource("VIP", "A", 2, 30000, false),
-//         Ressource("VIP", "A", 3, 30000, false),
-//         Ressource("VIP", "A", 4, 30000, false),
-//         Ressource("VIP", "A", 5, 30000, false),
-//         Ressource("VIP", "B", 1, 30000, false),
-//         Ressource("VIP", "B", 2, 30000, false),
-//         Ressource("VIP", "B", 3, 30000, false),
-//         Ressource("VIP", "B", 4, 30000, false),
-//         Ressource("VIP", "B", 5, 30000, false),
-//         Ressource("STANDARD", "A", 1, 30000, false),
-//         Ressource("STANDARD", "A", 2, 30000, false),
-//         Ressource("STANDARD", "A", 3, 30000, false),
-//         Ressource("STANDARD", "A", 4, 30000, false),
-//         Ressource("STANDARD", "A", 5, 30000, false),
-//         Ressource("STANDARD", "B", 1, 30000, false),
-//         Ressource("STANDARD", "B", 2, 30000, false),
-//         Ressource("STANDARD", "B", 3, 30000, false),
-//         Ressource("STANDARD", "B", 4, 30000, false),
-//         Ressource("STANDARD", "B", 5, 30000, false),
-//         Ressource("CLASSIC", "A", 1, 10000, false),
-//         Ressource("CLASSIC", "A", 2, 10000, false),
-//         Ressource("CLASSIC", "A", 3, 10000, false),
-//         Ressource("CLASSIC", "A", 4, 10000, false),
-//         Ressource("CLASSIC", "A", 5, 10000, false),
-//         Ressource("CLASSIC", "B", 1, 10000, false),
-//         Ressource("CLASSIC", "B", 2, 10000, false),
-//         Ressource("CLASSIC", "B", 3, 10000, false),
-//         Ressource("CLASSIC", "B", 4, 10000, false),
-//         Ressource("CLASSIC", "B", 5, 10000, false),
-//         Ressource("CLASSIC", "C", 1, 10000, false),
-//         Ressource("CLASSIC", "C", 2, 10000, false),
-//         Ressource("CLASSIC", "C", 3, 10000, false),
-//         Ressource("CLASSIC", "C", 4, 10000, false),
-//         Ressource("CLASSIC", "C", 5, 10000, false),
-//     };
-
-// }
-
 void MainWindow::initialiserPlaces()
 {
     if (!placesNonPubliees.empty() || !placesPubliees.empty())
@@ -216,16 +155,13 @@ void MainWindow::on_btnPublier_clicked()
         QMessageBox::warning(this, "Aucune sélection", "Veuillez sélectionner une place à publier !");
         return;
     }
-
     int id = ui->tableRessources_2->item(row, 0)->text().toInt();
     Ressource* res = gestionnaire.rechercher(id);
     if (!res) return;
 
-    // Mettre à jour prix si nécessaire
+    //Mettre le prix à jour si nécessaire
     res->setPrix(ui->inputPrix->text().toDouble());
     res->setDisponible(true);
-
-
     mettreAJourTables();
     gestionnaire.sauvegarder("places.txt");
     ui->inputPrix->clear();
@@ -350,7 +286,7 @@ void MainWindow::on_pdfButton_clicked()
     if (fileName.isEmpty()) return;
     if (!fileName.endsWith(".pdf")) fileName += ".pdf";
 
-    // --- Récupération des ressources
+    //Récupération des ressources
     const auto& ressources = gestionnaire.getRessources();
 
     int total = ressources.size();
@@ -369,15 +305,15 @@ void MainWindow::on_pdfButton_clicked()
         totalPrix += r.getPrix();
     }
 
-    // Map imbriquée : section → (rangée → nombre de places)
+    //Map imbriquée : section → (rangée → nombre de places)
     QMap<QString, QMap<QString, int>> statsSectionRangee;
 
-    // Map pour compter total, publiées et non publiées par section
+    //Map pour compter total, publiées et non publiées par section
     QMap<QString, int> totalParSection;
     QMap<QString, int> publieesParSection;
     QMap<QString, int> nonPublieesParSection;
 
-    // Construire les statistiques
+    //Construire les statistiques
     for (const auto &r : ressources) {
         QString section = QString::fromStdString(r.getSection());
         QString rangee = QString::fromStdString(r.getRangee());

@@ -36,18 +36,3 @@ void Ressource::setPrix(double nouveauPrix) { prix = nouveauPrix; }
 void Ressource::setSection(const std::string& s) { section = s; }
 void Ressource::setRangee(const std::string& r) { rangee = r; }
 void Ressource::setSiege(int s) { siege = s; }
-
-//Méthode d'affichage
-
-    std::string Ressource::toString() const {
-    return "ID: " + std::to_string(id) + 
-           " | Section: " + section +
-           " | Rangée: " + rangee +
-           " | Siège: " + std::to_string(siege) +
-           " | Prix: " + std::to_string(prix) + " FCFA" +
-           " | Disponible: " + (disponible ? "Oui" : "Non");
-    }//TODO : enlever
-
-
-
-    //

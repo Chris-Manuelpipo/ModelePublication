@@ -26,71 +26,12 @@ bool Publication::publier(const Ressource& res) {
     return true;
 }
 
-
-// implementation (exemple simple)
-bool Publication::publierParId(int id, double nouveauPrix) {
-    for (auto &r : ressources) { // ressources : std::vector<Ressource>
-        if (r.getId() == id) {
-            if (r.estDisponible()) return false; // déjà publié
-            r.setPrix(nouveauPrix);
-            r.setDisponible(true);
-            return true;
-        }
-    }
-    return false; // introuvable
-}
-
-
-
-/*void Publication::publier(const Ressource& res) {
-    ressources.push_back(res);
-    std::cout << " Ressource publiée : " << res.getSiege() << std::endl;
-}*/
-
-bool Publication::retirer(int id) {
-    for (auto it = ressources.begin(); it != ressources.end(); ++it) {
-        if (it->getId() == id) {
-            ressources.erase(it);
-            std::cout << "Place supprimée (id=" << id << ")" << std::endl;
-            return true;
-        }
-    }
-    std::cout << " Place non trouvée." << std::endl;
-    return false;
-}//TODO : enlever
-
-bool Publication::modifier(int id, const Ressource &nouvelle) {
-    for (auto &r : ressources) {
-        if (r.getId() == id) {
-            r.setSection(nouvelle.getSection());
-            r.setRangee(nouvelle.getRangee());
-            r.setSiege(nouvelle.getSiege());
-            r.setPrix(nouvelle.getPrix());
-            return true;
-        }
-    }
-    return false;
-} //TODO : enlever
-
-
 Ressource* Publication::rechercher(int id) {
     for (auto& res : ressources) {
         if (res.getId() == id) return &res;
     }
     return nullptr;
 }
-
-std::vector<Ressource*> Publication::chercher(const std::string& section, const std::string& rangee) const {
-    std::vector<Ressource*> résultats;
-    for (auto& res : ressources) {
-        if (res.getSection() == section && res.getRangee() == rangee) {
-            résultats.push_back(const_cast<Ressource*>(&res)); 
-        }
-    }
-    return résultats;
-}
-
-
 void Publication::afficherToutes() const {
     std::cout << ressources.size() << " places publiées :\n";
     std::cout << "Liste des places publiées :\n";
