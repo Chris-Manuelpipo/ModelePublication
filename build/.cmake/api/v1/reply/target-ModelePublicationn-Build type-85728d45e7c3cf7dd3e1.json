@@ -171,7 +171,7 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "-DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always"
+					"fragment" : "-std=gnu++17 -fdiagnostics-color=always"
 				},
 				{
 					"backtrace" : 2,
@@ -187,6 +187,10 @@
 				{
 					"backtrace" : 2,
 					"define" : "QT_GUI_LIB"
+				},
+				{
+					"backtrace" : 2,
+					"define" : "QT_NO_DEBUG"
 				},
 				{
 					"backtrace" : 2,
@@ -276,10 +280,6 @@
 	{
 		"commandFragments" : 
 		[
-			{
-				"fragment" : "-DQT_QML_DEBUG -g",
-				"role" : "flags"
-			},
 			{
 				"fragment" : "",
 				"role" : "flags"

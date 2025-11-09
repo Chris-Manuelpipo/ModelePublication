@@ -124,37 +124,36 @@ void MainWindow::initialiserPlaces()
 
     struct TypePlace {
         QString type;
+        QStringList rangees;
+        int debutSiege;
+        int finSiege;
         double prix;
-        int nombrePlaces;
     };
 
-    // On répartit les 1000 places entre les 4 types
+    // Définition simple des sections
     QVector<TypePlace> types = {
-        {"VVIP", 50000, 250},
-        {"VIP", 30000, 250},
-        {"STANDARD", 20000, 250},
-        {"CLASSIC", 10000, 250}
+        {"VVIP", {"A", "B", "C", "D", "E"}, 1, 10, 50000},
+        {"VIP", {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J"}, 1, 10, 30000},
+        {"STANDARD", {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J"}, 1, 35, 20000},
+        {"CLASSIC", {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J"}, 1, 50, 10000}
     };
-
-    QStringList rangees = {"A", "B", "C", "D", "E", "F", "G", "H"}; // Exemple de rangées
-    int nbRangees = rangees.size();
 
     // Génération automatique
     for (const auto &t : types) {
-        int siegeGlobal = 1;
-        for (int i = 0; i < t.nombrePlaces; ++i) {
-            QString rangee = rangees[i % nbRangees]; // alterner les rangées
-            int siege = (i % 50) + 1;                // 50 sièges max par rangée
-            Ressource res(t.type.toStdString(),
-                          rangee.toStdString(),
-                          siege,
-                          t.prix,
-                          false);
-            placesNonPubliees.push_back(res);
-            siegeGlobal++;
+        for (const QString &rangee : t.rangees) {
+            for (int i = t.debutSiege; i <= t.finSiege; ++i) {
+                placesNonPubliees.emplace_back(
+                    t.type.toStdString(),
+                    rangee.toStdString(),
+                    i,
+                    t.prix,
+                    false
+                    );
+            }
         }
     }
 }
+
 
 
 // Mettre à jour les deux tableaux
@@ -413,7 +412,7 @@ void MainWindow::on_pdfButton_clicked()
     html += "<li><b>Nombre total de places :</b> " + QString::number(total) + "</li>";
     html += "<li><b>Places publiées :</b> " + QString::number(publiees) + "</li>";
     html += "<li><b>Places non publiées :</b> " + QString::number(nonPubliees) + "</li>";
-    html += "<li><b>Prix moyen :</b> " + QString::number(total ? totalPrix / total : 0, 'f', 2) + " FCFA</li>";
+    // html += "<li><b>Prix moyen :</b> " + QString::number(total ? totalPrix / total : 0, 'f', 2) + " FCFA</li>";
     html += "</ul>";
 
     // === Statistiques par section et rangée ===

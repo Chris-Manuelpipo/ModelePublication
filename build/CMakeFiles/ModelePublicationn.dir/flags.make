@@ -6,5 +6,5 @@ CXX_DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_PRINTSUPPORT_LIB -DQ
 
 CXX_INCLUDES = -I/home/chris-manuel/Bureau/bureau/ModelePublicationn/build/ModelePublicationn_autogen/include -I/home/chris-manuel/Bureau/bureau/ModelePublicationn/include -isystem /usr/include/x86_64-linux-gnu/qt6/QtWidgets -isystem /usr/include/x86_64-linux-gnu/qt6 -isystem /usr/include/x86_64-linux-gnu/qt6/QtCore -isystem /usr/lib/x86_64-linux-gnu/qt6/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt6/QtGui -isystem /usr/include/x86_64-linux-gnu/qt6/QtPrintSupport
 
-CXX_FLAGS = -DQT_QML_DEBUG -std=gnu++17 -fdiagnostics-color=always -fPIC
+CXX_FLAGS = -std=gnu++17 -fdiagnostics-color=always -fPIC
 

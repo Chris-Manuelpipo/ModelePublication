@@ -57,7 +57,7 @@ public:
     QLabel *Rangee_2;
     QLabel *Siege_2;
     QLabel *Section_2;
-    QWidget *widget;
+    QWidget *layoutWidget3;
     QHBoxLayout *horizontalLayout;
     QPushButton *btnPublier;
     QPushButton *btnSupprimer;
@@ -206,13 +206,13 @@ public:
 
         verticalLayout->addLayout(gridLayout);
 
-        widget = new QWidget(centralwidget);
-        widget->setObjectName("widget");
-        widget->setGeometry(QRect(711, 567, 381, 81));
-        horizontalLayout = new QHBoxLayout(widget);
+        layoutWidget3 = new QWidget(centralwidget);
+        layoutWidget3->setObjectName("layoutWidget3");
+        layoutWidget3->setGeometry(QRect(711, 567, 381, 81));
+        horizontalLayout = new QHBoxLayout(layoutWidget3);
         horizontalLayout->setObjectName("horizontalLayout");
         horizontalLayout->setContentsMargins(0, 0, 0, 0);
-        btnPublier = new QPushButton(widget);
+        btnPublier = new QPushButton(layoutWidget3);
         btnPublier->setObjectName("btnPublier");
         QIcon icon1;
         icon1.addFile(QString::fromUtf8(":/new/prefix1/icons/arrow-up.png"), QSize(), QIcon::Normal, QIcon::Off);
@@ -220,7 +220,7 @@ public:
 
         horizontalLayout->addWidget(btnPublier);
 
-        btnSupprimer = new QPushButton(widget);
+        btnSupprimer = new QPushButton(layoutWidget3);
         btnSupprimer->setObjectName("btnSupprimer");
         QIcon icon2;
         icon2.addFile(QString::fromUtf8(":/new/prefix1/icons/trash.png"), QSize(), QIcon::Normal, QIcon::Off);
@@ -228,7 +228,7 @@ public:
 
         horizontalLayout->addWidget(btnSupprimer);
 
-        pdfButton = new QPushButton(widget);
+        pdfButton = new QPushButton(layoutWidget3);
         pdfButton->setObjectName("pdfButton");
         QIcon icon3;
         icon3.addFile(QString::fromUtf8(":/new/prefix1/icons/sauvegarder.png"), QSize(), QIcon::Normal, QIcon::Off);
@@ -254,7 +254,7 @@ public:
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "Publication des places d'un stade de football", nullptr));
         pushButton->setText(QCoreApplication::translate("MainWindow", "Retour", nullptr));
-        label->setText(QCoreApplication::translate("MainWindow", "Places non publi\303\251es", nullptr));
+        label->setText(QCoreApplication::translate("MainWindow", "Places non publi\303\251es(S\303\251lectionner une place pour l\303\240 publier)", nullptr));
         label_2->setText(QCoreApplication::translate("MainWindow", "Places Publi\303\251es", nullptr));
         label_4->setText(QCoreApplication::translate("MainWindow", "Trier les places publi\303\251es par :", nullptr));
         label_3->setText(QCoreApplication::translate("MainWindow", "Modifier le prix de la place \303\240 publier", nullptr));

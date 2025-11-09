@@ -47,7 +47,7 @@
      <item>
       <widget class="QLabel" name="label">
        <property name="text">
-        <string>Places non publiées</string>
+        <string>Places non publiées(Sélectionner une place pour là publier)</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>
@@ -274,7 +274,7 @@
      </item>
     </layout>
    </widget>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>711</x>

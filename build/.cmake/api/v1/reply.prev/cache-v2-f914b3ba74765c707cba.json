@@ -43,7 +43,7 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : "Build type"
+			"value" : "Debug"
 		},
 		{
 			"name" : "CMAKE_CACHEFILE_DIR",
@@ -219,22 +219,6 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : "-DQT_QML_DEBUG"
-		},
-		{
-			"name" : "CMAKE_CXX_FLAGS_BUILD TYPE",
-			"properties" : 
-			[
-				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
-				{
-					"name" : "HELPSTRING",
-					"value" : "Flags used by the CXX compiler during BUILD TYPE builds."
-				}
-			],
-			"type" : "STRING",
 			"value" : ""
 		},
 		{
@@ -263,7 +247,7 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : "-DQT_QML_DEBUG"
+			"value" : ""
 		},
 		{
 			"name" : "CMAKE_CXX_FLAGS_MINSIZEREL",
@@ -388,22 +372,6 @@
 				{
 					"name" : "HELPSTRING",
 					"value" : "Flags used by the linker during all build types."
-				}
-			],
-			"type" : "STRING",
-			"value" : ""
-		},
-		{
-			"name" : "CMAKE_EXE_LINKER_FLAGS_BUILD TYPE",
-			"properties" : 
-			[
-				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
-				{
-					"name" : "HELPSTRING",
-					"value" : "Flags used by the linker during BUILD TYPE builds."
 				}
 			],
 			"type" : "STRING",
@@ -902,22 +870,6 @@
 			"value" : ""
 		},
 		{
-			"name" : "CMAKE_MODULE_LINKER_FLAGS_BUILD TYPE",
-			"properties" : 
-			[
-				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
-				{
-					"name" : "HELPSTRING",
-					"value" : "Flags used by the linker during the creation of modules during BUILD TYPE builds."
-				}
-			],
-			"type" : "STRING",
-			"value" : ""
-		},
-		{
 			"name" : "CMAKE_MODULE_LINKER_FLAGS_DEBUG",
 			"properties" : 
 			[
@@ -1234,22 +1186,6 @@
 			"value" : ""
 		},
 		{
-			"name" : "CMAKE_SHARED_LINKER_FLAGS_BUILD TYPE",
-			"properties" : 
-			[
-				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
-				{
-					"name" : "HELPSTRING",
-					"value" : "Flags used by the linker during the creation of shared libraries during BUILD TYPE builds."
-				}
-			],
-			"type" : "STRING",
-			"value" : ""
-		},
-		{
 			"name" : "CMAKE_SHARED_LINKER_FLAGS_DEBUG",
 			"properties" : 
 			[
@@ -1356,22 +1292,6 @@
 				{
 					"name" : "HELPSTRING",
 					"value" : "Flags used by the linker during the creation of static libraries during all build types."
-				}
-			],
-			"type" : "STRING",
-			"value" : ""
-		},
-		{
-			"name" : "CMAKE_STATIC_LINKER_FLAGS_BUILD TYPE",
-			"properties" : 
-			[
-				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
-				{
-					"name" : "HELPSTRING",
-					"value" : "Flags used by the linker during the creation of static libraries during BUILD TYPE builds."
 				}
 			],
 			"type" : "STRING",
