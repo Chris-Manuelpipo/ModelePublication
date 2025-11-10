@@ -43,7 +43,7 @@ Q_CONSTINIT static const qt_meta_stringdata_MainWindow_t qt_meta_stringdata_Main
         QT_MOC_LITERAL(0, 10),  // "MainWindow"
         QT_MOC_LITERAL(11, 21),  // "on_btnPublier_clicked"
         QT_MOC_LITERAL(33, 0),  // ""
-        QT_MOC_LITERAL(34, 23),  // "on_btnSupprimer_clicked"
+        QT_MOC_LITERAL(34, 23),  // "on_btnDepublier_clicked"
         QT_MOC_LITERAL(58, 25),  // "on_btnSauvegarder_clicked"
         QT_MOC_LITERAL(84, 21),  // "on_pushButton_clicked"
         QT_MOC_LITERAL(106, 13),  // "filtrerPlaces"
@@ -52,7 +52,7 @@ Q_CONSTINIT static const qt_meta_stringdata_MainWindow_t qt_meta_stringdata_Main
     "MainWindow",
     "on_btnPublier_clicked",
     "",
-    "on_btnSupprimer_clicked",
+    "on_btnDepublier_clicked",
     "on_btnSauvegarder_clicked",
     "on_pushButton_clicked",
     "filtrerPlaces",
@@ -104,7 +104,7 @@ Q_CONSTINIT const QMetaObject MainWindow::staticMetaObject = { {
         QtPrivate::TypeAndForceComplete<MainWindow, std::true_type>,
         // method 'on_btnPublier_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        // method 'on_btnSupprimer_clicked'
+        // method 'on_btnDepublier_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'on_btnSauvegarder_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
@@ -125,7 +125,7 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         (void)_t;
         switch (_id) {
         case 0: _t->on_btnPublier_clicked(); break;
-        case 1: _t->on_btnSupprimer_clicked(); break;
+        case 1: _t->on_btnDepublier_clicked(); break;
         case 2: _t->on_btnSauvegarder_clicked(); break;
         case 3: _t->on_pushButton_clicked(); break;
         case 4: _t->filtrerPlaces(); break;

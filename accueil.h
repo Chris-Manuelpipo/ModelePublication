@@ -17,7 +17,6 @@ public:
 
 private slots:
     void on_btnAdmin_clicked();
-
     void on_btnClient_clicked();
 
 private:

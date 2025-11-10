@@ -31,18 +31,13 @@ MainWindow::MainWindow(QWidget *parent)
 
     //Mettre à jour les tableaux UI
     mettreAJourTables();
-
     ui->inputPrix->setReadOnly(false); //Prix reste modifiable
 
     //Remplir le formulaire quand une place non publiée est sélectionnée
     connect(ui->tableRessources_2, &QTableWidget::cellClicked, this, [this](int row, int col){
         Q_UNUSED(col);
         if (row < 0 || row >= placesNonPubliees.size()) return;
-
         idEnCours = placesNonPubliees[row].getId();
-        // ui->inputSection->setText(QString::fromStdString(placesNonPubliees[row].getSection()));
-        // ui->inputRangee->setText(QString::fromStdString(placesNonPubliees[row].getRangee()));
-        // ui->inputSiege->setText(QString::number(placesNonPubliees[row].getSiege()));
         ui->inputPrix->setText(QString::number(placesNonPubliees[row].getPrix()));
     });
 
@@ -93,8 +88,6 @@ void MainWindow::initialiserPlaces()
     }
 }
 
-
-
 // Mettre à jour les deux tableaux
 void MainWindow::mettreAJourTables()
 {
@@ -144,8 +137,9 @@ void MainWindow::mettreAJourTables()
         ui->tableRessources_2->setItem(iNonPub, 4, new QTableWidgetItem(QString::number(r.getPrix())));
         ++iNonPub;
     }
-}
+    mettreAJourResume();
 
+}
 
 //Publier une place
 void MainWindow::on_btnPublier_clicked()
@@ -171,16 +165,13 @@ void MainWindow::on_btnPublier_clicked()
 
 
 //Dépublier une place sélectionnée dans le tableau des publiées
-
-void MainWindow::on_btnSupprimer_clicked()
+void MainWindow::on_btnDepublier_clicked()
 {
     int row = ui->tableRessources->currentRow();
     if (row < 0){
         QMessageBox::warning(this, "Aucune sélection", "Veuillez sélectionner une place à publier !");
         return;
     }
-
-
     int id = ui->tableRessources->item(row, 0)->text().toInt();
     Ressource* res = gestionnaire.rechercher(id);
     if (!res) return;
@@ -199,7 +190,7 @@ void MainWindow::on_btnSupprimer_clicked()
     }
 }
 
-// Sauvegarder toutes les places publiées
+//Sauvegarder toutes les places publiées dans le fichier texte
 void MainWindow::on_btnSauvegarder_clicked()
 {
     if (gestionnaire.sauvegarder("places.txt"))
@@ -275,10 +266,6 @@ void MainWindow::remplirSelecteursDepuisPlaces()
     for (const QString &s : sieges)
         ui->comboBox_3->addItem(s);
 }
-
-
-
-
 void MainWindow::on_pdfButton_clicked()
 {
     // Choisir le fichier PDF
@@ -370,9 +357,6 @@ void MainWindow::on_pdfButton_clicked()
         html += "</ul></li>";
         html += "</ul>";
     }
-
-
-
     // Créer l'objet QTextDocument
     QTextDocument doc;
 
@@ -381,7 +365,6 @@ void MainWindow::on_pdfButton_clicked()
     html += "<tr style='background-color:#27AE60; color:white;'><th>ID</th><th>Section</th><th>Rangée</th><th>Siège</th><th>Prix</th><th>Disponible</th></tr>";
 
     // Parcourir toutes les ressources (publiées + non publiées)
-    //const auto& ressources = gestionnaire.getRessources();
     for (const auto &r : ressources) {
         html += "<tr>";
         html += "<td>" + QString::number(r.getId()) + "</td>";
@@ -393,9 +376,7 @@ void MainWindow::on_pdfButton_clicked()
         html += "</tr>";
     }
     html += "</table>";
-
     doc.setHtml(html);
-
     // Configurer l'imprimante PDF
     QPrinter printer(QPrinter::HighResolution);
     printer.setOutputFormat(QPrinter::PdfFormat);
@@ -403,6 +384,48 @@ void MainWindow::on_pdfButton_clicked()
 
     // Générer le PDF
     doc.print(&printer);
-
     QMessageBox::information(this, "PDF généré", "Le fichier PDF a été enregistré à: " + fileName);
+}
+
+void MainWindow::mettreAJourResume()
+{
+    const auto& ressources = gestionnaire.getRessources();
+
+    int total = ressources.size();
+    int totalPubliees = 0;
+    int totalNonPubliees = 0;
+    QMap<QString, int> publieesParSection;
+    QMap<QString, int> nonPublieesParSection;
+
+    // Comptage global et par section
+    for (const auto& res : ressources) {
+        QString section = QString::fromStdString(res.getSection());
+        if (res.estDisponible()) {
+            totalPubliees++;
+            publieesParSection[section]++;
+        } else {
+            totalNonPubliees++;
+            nonPublieesParSection[section]++;
+        }
+    }
+
+    //Mise à jour des labels
+    ui->labelTotal->setText(QString("Total de places : %1").arg(total));
+    ui->labelPubliees->setText(QString("Publiées : %1").arg(totalPubliees));
+    ui->labelNonPubliees->setText(QString("Non publiées : %1").arg(totalNonPubliees));
+
+    // Formatage des sections
+    QString publieesText;
+    for (auto it = publieesParSection.begin(); it != publieesParSection.end(); ++it)
+        publieesText += QString("%1 : %2  |  ").arg(it.key()).arg(it.value());
+
+    QString nonPublieesText;
+    for (auto it = nonPublieesParSection.begin(); it != nonPublieesParSection.end(); ++it)
+        nonPublieesText += QString("%1 : %2  |  ").arg(it.key()).arg(it.value());
+
+    if (publieesText.isEmpty()) publieesText = "Aucune section publiée";
+    if (nonPublieesText.isEmpty()) nonPublieesText = "Aucune section non publiée";
+
+    ui->labelPublieesParSection->setText("" + publieesText);
+    ui->labelNonPublieesParSection->setText("" + nonPublieesText);
 }

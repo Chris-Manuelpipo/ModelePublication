@@ -1,12 +1,12 @@
 /* ================================
    Thème Football Épuré - Vert, Sombre, BLANC VIF
-   (Avec GroupBox style original)
+   Version complète avec Stats
    ================================ */
 
 /* --- Configuration Générale --- */
 * {
     font-family: "Segoe UI", "Helvetica", sans-serif;
-    color: #FFFFFF; /* BLANC PUR pour tout le texte par défaut */
+    color: #FFFFFF; /* Blanc pur pour tout le texte par défaut */
 }
 
 QMainWindow {
@@ -20,20 +20,20 @@ QLabel {
     background-color: transparent;
 }
 
-/* Titres principaux (plus épurés, avec un soulignage d'accent) */
+/* Titres principaux (avec soulignage vert) */
 QLabel#label, QLabel#label_2, QLabel#label_3, QLabel#label_4, QLabel#Filtrage_3 {
     color: #2ECC71; /* vert vif */
     font-weight: bold;
     font-size: 18px;
-    border-bottom: 2px solid #27AE60; /* Ligne de séparation propre */
+    border-bottom: 2px solid #27AE60;
     padding-bottom: 4px;
-    margin-bottom: 5px; /* Espace après le titre */
+    margin-bottom: 5px;
 }
 
 /* --- Boutons --- */
 QPushButton {
-    background-color: #27AE60; /* vert foncé */
-    color: #FFFFFF; /* Blanc pur (déjà le cas) */
+    background-color: #27AE60;
+    color: #FFFFFF;
     border: none;
     border-radius: 6px;
     padding: 8px 14px;
@@ -56,7 +56,7 @@ QLineEdit, QComboBox {
     border-radius: 5px;
     padding: 6px;
     background-color: #3A3D41;
-    color: #FFFFFF; /* Blanc pur */
+    color: #FFFFFF;
     min-height: 20px;
 }
 
@@ -65,10 +65,9 @@ QLineEdit:focus, QComboBox:focus {
     background-color: #404448;
 }
 
-/* Style de la liste déroulante ComboBox */
 QComboBox QAbstractItemView {
     background-color: #2C2F33;
-    color: #FFFFFF; /* Blanc pur */
+    color: #FFFFFF;
     border: 1px solid #4A4E52;
     selection-background-color: #27AE60;
     selection-color: #FFFFFF;
@@ -79,13 +78,13 @@ QComboBox::drop-down {
     width: 20px;
 }
 
-/* --- GroupBox (Section, Rangée, Prix) - VOTRE STYLE RESTAURÉ --- */
+/* --- GroupBox général (sections, rangées, etc.) --- */
 QGroupBox {
     border: 2px solid #27AE60;
     border-radius: 8px;
     margin-top: 10px;
     background-color: #33373B;
-    color: #2ECC71; /* Titre du groupe reste vert */
+    color: #2ECC71;
     font-weight: bold;
 }
 
@@ -97,7 +96,7 @@ QGroupBox::title {
 
 /* --- Radio boutons --- */
 QRadioButton {
-    color: #FFFFFF; /* Blanc pur */
+    color: #FFFFFF;
     font-weight: 500;
     padding: 2px;
 }
@@ -119,33 +118,64 @@ QRadioButton::indicator:checked {
     border-color: #27AE60;
 }
 
-
-/* --- Table (QTableWidget) --- */
+/* --- Tables (QTableWidget) --- */
 QTableWidget {
     background-color: #2C2F33;
     alternate-background-color: #33373B;
     border: 1px solid #4A4E52;
     gridline-color: #4A4E52;
-    color: #FFFFFF; /* Blanc pur */
+    color: #FFFFFF;
     selection-background-color: #2ECC71;
     selection-color: #121212;
     font-size: 13px;
 }
 
-/* En-tête de table */
 QHeaderView::section {
     background-color: #3A3D41;
-    color: #FFFFFF; /* Blanc pur (déjà le cas) */
+    color: #FFFFFF;
     font-weight: bold;
     border: none;
     border-bottom: 2px solid #27AE60;
     padding: 8px 4px;
 }
 
-/* --- Barres de Menu et Statut --- */
+/* --- Scrollbars --- */
+QScrollBar:vertical {
+    background: #2C2F33;
+    width: 12px;
+    border-radius: 6px;
+}
+
+QScrollBar::handle:vertical {
+    background: #27AE60;
+    min-height: 20px;
+    border-radius: 6px;
+}
+
+QScrollBar::handle:vertical:hover {
+    background: #2ECC71;
+}
+
+QScrollBar:horizontal {
+    background: #2C2F33;
+    height: 12px;
+    border-radius: 6px;
+}
+
+QScrollBar::handle:horizontal {
+    background: #27AE60;
+    min-width: 20px;
+    border-radius: 6px;
+}
+
+QScrollBar::handle:horizontal:hover {
+    background: #2ECC71;
+}
+
+/* --- Menu et barre d’état --- */
 QMenuBar {
     background-color: #2C2F33;
-    color: #FFFFFF; /* Blanc pur */
+    color: #FFFFFF;
     border-bottom: 1px solid #4A4E52;
 }
 
@@ -162,4 +192,28 @@ QStatusBar {
     background-color: #2C2F33;
     color: #2ECC71;
     font-weight: bold;
+}
+
+/* --- Statistiques --- */
+QGroupBox#groupBoxStatistiques {
+    border: 2px solid #27AE60;
+    border-radius: 8px;
+    background-color: #33373B;
+    margin-top: 10px;
+    padding: 10px;
+    color: #2ECC71;
+    font-weight: bold;
+}
+
+QLabel#labelTotal, QLabel#labelPubliees, QLabel#labelNonPubliees {
+    font-weight: bold;
+    color: #FFFFFF;
+    font-size: 15px;
+    padding: 5px 0;
+}
+
+QLabel#labelPublieesParSection, QLabel#labelNonPublieesParSection {
+    color: #2ECC71;
+    font-size: 13px;
+    padding-left: 10px;
 }

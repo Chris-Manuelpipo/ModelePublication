@@ -45,15 +45,10 @@ void Publication::afficherToutes() const {
                   << "\n";
     }
 }//TODO : enlever
-
 //Sauvegarder et charger
-
-
-
 bool Publication::sauvegarder(const std::string& fichier) const {
     std::ofstream ofs(fichier);
     if (!ofs) return false;
-
     for (const auto& res : ressources) {
         ofs << res.getId() << ";"
             << res.getSection() << ";"
@@ -74,7 +69,6 @@ bool Publication::charger(const std::string& fichier) {
     while (std::getline(ifs, ligne)) {
         std::stringstream ss(ligne);
         std::string token;
-
         int id, siege;
         double prix;
         bool dispo;
@@ -89,9 +83,7 @@ bool Publication::charger(const std::string& fichier) {
 
         Ressource res(section, rangee, siege, prix, dispo);
         //Gère le conflit d'id entre le client et le serveur
-
         res.setId(id);
-
         // On force l'id pour correspondre à celui du fichier
         ressources.push_back(res);
     }

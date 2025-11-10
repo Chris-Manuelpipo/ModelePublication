@@ -19,7 +19,7 @@ public:
 
 private slots:
     void on_btnPublier_clicked();
-    void on_btnSupprimer_clicked();
+    void on_btnDepublier_clicked();
     void on_btnSauvegarder_clicked();
     void on_pushButton_clicked();
     void filtrerPlaces();
@@ -32,6 +32,7 @@ private:
     void initialiserPlaces();
     void rafraichirTableau();
     void mettreAJourTables();
+    void mettreAJourResume();
     void remplirSelecteursDepuisPlaces();
     QVector<Ressource> placesNonPubliees;
     QVector<Ressource> placesPubliees;

@@ -22,13 +22,10 @@ int main(int argc, char *argv[])
 
     QFile styleFile(":/new/prefix1/style.qss");
 
-    if (styleFile.open(QFile::ReadOnly)) {
-        QString style(styleFile.readAll());
-        a.setStyleSheet(style);
-        //qDebug() << "Style chargé !";
-    }else {
-        //qDebug() << "Impossible d’ouvrir le style";
-    }
+    styleFile.open(QFile::ReadOnly);
+    QString style(styleFile.readAll());
+    a.setStyleSheet(style);
+
 
     // MainWindow w;
     // w.show();
