@@ -397,7 +397,7 @@ void MainWindow::mettreAJourResume()
     QMap<QString, int> publieesParSection;
     QMap<QString, int> nonPublieesParSection;
 
-    // Comptage global et par section
+    //Comptage global et par section
     for (const auto& res : ressources) {
         QString section = QString::fromStdString(res.getSection());
         if (res.estDisponible()) {
@@ -414,7 +414,7 @@ void MainWindow::mettreAJourResume()
     ui->labelPubliees->setText(QString("Publiées : %1").arg(totalPubliees));
     ui->labelNonPubliees->setText(QString("Non publiées : %1").arg(totalNonPubliees));
 
-    // Formatage des sections
+    //Formatage des sections
     QString publieesText;
     for (auto it = publieesParSection.begin(); it != publieesParSection.end(); ++it)
         publieesText += QString("%1 : %2  |  ").arg(it.key()).arg(it.value());

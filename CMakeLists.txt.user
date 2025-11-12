@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 13.0.0, 2025-11-10T22:25:13. -->
+<!-- Written by QtCreator 13.0.0, 2025-11-11T22:21:18. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -104,7 +104,7 @@
     <value type="bool" key="CMake.Configure.ClearSystemEnvironment">false</value>
     <valuelist type="QVariantList" key="CMake.Configure.UserEnvironmentChanges"/>
     <value type="QString" key="CMake.Initial.Parameters">-DCMAKE_GENERATOR:STRING=Unix Makefiles
--DCMAKE_BUILD_TYPE:STRING=Debug
+-DCMAKE_BUILD_TYPE:STRING=Build type
 -DCMAKE_PROJECT_INCLUDE_BEFORE:FILEPATH=%{BuildConfig:BuildDirectory:NativeFilePath}/.qtc/package-manager/auto-setup.cmake
 -DQT_QMAKE_EXECUTABLE:FILEPATH=%{Qt:qmakeExecutable}
 -DCMAKE_PREFIX_PATH:PATH=%{Qt:QT_INSTALL_PREFIX}

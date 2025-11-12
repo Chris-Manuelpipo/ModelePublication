@@ -63,7 +63,6 @@ void ClientWindow::onFileChanged(const QString &path)
 
 
 //Fonction pour raffraichir le tableau des places
-
 void ClientWindow::rafraichirTableau() {
     const auto& ressources = gestionnaire.getRessources();
 
@@ -106,48 +105,6 @@ void ClientWindow::rafraichirTableau() {
 
     mettreAJourFiltres();
 }
-
-/*void ClientWindow::rafraichirTableau() {
-    const auto& ressources = gestionnaire.getRessources(); //retourne la liste des ressources
-
-    int nbPub = 0;
-    for (const auto& r : ressources)
-        if (r.estDisponible()) ++nbPub;
-    ui->tableRessources->setRowCount(nbPub);
-
-    ui->tableRessources->setRowCount(ressources.size()); //le nombre de lignes du tableau correspond au nombre de places
-    ui->tableRessources->setColumnCount(6);
-    QStringList headers = {"ID", "Section", "Rangée", "Siège", "Prix (FCFA)", "Disponible"};
-    ui->tableRessources->setHorizontalHeaderLabels(headers);
-
-    //Nettoyer les ensembles pour les filtres
-    sectionsConnues.clear();
-    rangeesConnues.clear();
-    prixConnus.clear();
-
-    for (int i = 0; i < ressources.size(); ++i) {
-        const auto& r = ressources[i];
-        if (!r.estDisponible()) continue; // n'afficher que les places publiées
-
-        QString section = QString::fromStdString(r.getSection());
-        QString rangee  = QString::fromStdString(r.getRangee());
-        QString prix    = QString::number(r.getPrix());
-
-        ui->tableRessources->setItem(i, 0, new QTableWidgetItem(QString::number(r.getId())));
-        ui->tableRessources->setItem(i, 1, new QTableWidgetItem(section));
-        ui->tableRessources->setItem(i, 2, new QTableWidgetItem(rangee));
-        ui->tableRessources->setItem(i, 3, new QTableWidgetItem(QString::number(r.getSiege())));
-        ui->tableRessources->setItem(i, 4, new QTableWidgetItem(prix));
-        ui->tableRessources->setItem(i, 5, new QTableWidgetItem(r.estDisponible() ? "Oui" : "Non"));
-
-        //Enregistre les filtres connus
-        sectionsConnues.insert(section);
-        rangeesConnues.insert(rangee);
-        prixConnus.insert(prix);
-    }
-
-    mettreAJourFiltres();
-}*/
 
 //Fonction pour mettre les filtres à jour
 
@@ -207,58 +164,6 @@ void ClientWindow::filtrerTableau() {
     }
 }
 
-
-/*void ClientWindow::filtrerTableau() {
-    QString recherche = ui->inputRecherche_3->text().toLower();
-
-    QString filtreSection, filtreRangee, filtrePrix;
-
-    for (auto rb : ui->groupSections_3->findChildren<QRadioButton*>())
-        if (rb->isChecked()) filtreSection = rb->text();
-
-    for (auto rb : ui->groupRangees_3->findChildren<QRadioButton*>())
-        if (rb->isChecked()) filtreRangee = rb->text();
-
-    for (auto rb : ui->groupPrix_3->findChildren<QRadioButton*>())
-        if (rb->isChecked()) filtrePrix = rb->text();
-
-    for (int i = 0; i < ui->tableRessources->rowCount(); ++i) {
-        QString section = ui->tableRessources->item(i, 1)->text();
-        QString rangee  = ui->tableRessources->item(i, 2)->text();
-        QString prix    = ui->tableRessources->item(i, 4)->text();
-
-        bool visible = true;
-
-        if (!filtreSection.isEmpty() && section != filtreSection) visible = false;
-        if (!filtreRangee.isEmpty() && rangee != filtreRangee) visible = false;
-        if (!filtrePrix.isEmpty() && prix != filtrePrix) visible = false;
-
-        if (!recherche.isEmpty() &&
-            !section.toLower().contains(recherche) &&
-            !rangee.toLower().contains(recherche) &&
-            !prix.toLower().contains(recherche))
-            visible = false;
-
-        ui->tableRessources->setRowHidden(i, !visible);
-    }
-}*/
-
-/*void ClientWindow::majBoutons(QVBoxLayout *layout, const QString &valeur, QSet<QString>&) {
-    QRadioButton *radio = new QRadioButton(valeur);
-    layout->addWidget(radio);
-    connect(radio, &QRadioButton::toggled, this, [=](bool checked){
-        if (radio == dernierClic){
-            radio->setAutoExclusive(false);
-            radio->setChecked(false);
-            radio->setAutoExclusive(true);
-            dernierClic = nullptr;
-            filtrerTableau();
-        }else{
-            dernierClic = radio;
-            filtrerTableau();}
-    });
-}*/
-
 void ClientWindow::majBoutons(QVBoxLayout *layout, const QString &valeur, QSet<QString>&) {
     QRadioButton *radio = new QRadioButton(valeur);
     layout->addWidget(radio);
@@ -277,7 +182,6 @@ void ClientWindow::majBoutons(QVBoxLayout *layout, const QString &valeur, QSet<Q
     });
 }
 
-
 void ClientWindow::on_btnResetFiltres_3_clicked()
 {
     for (auto rb : this->findChildren<QRadioButton*>()) {
@@ -289,7 +193,7 @@ void ClientWindow::on_btnResetFiltres_3_clicked()
     filtrerTableau();
 }
 
-
+//Bouton retour
 void ClientWindow::on_pushButton_clicked()
 {
     accueil *acc = new accueil();

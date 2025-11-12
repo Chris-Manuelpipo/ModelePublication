@@ -89,7 +89,7 @@ public:
         pushButton->setIcon(icon);
         layoutWidget = new QWidget(centralwidget);
         layoutWidget->setObjectName("layoutWidget");
-        layoutWidget->setGeometry(QRect(10, 130, 662, 611));
+        layoutWidget->setGeometry(QRect(10, 50, 662, 691));
         verticalLayout_3 = new QVBoxLayout(layoutWidget);
         verticalLayout_3->setObjectName("verticalLayout_3");
         verticalLayout_3->setContentsMargins(0, 0, 0, 0);
@@ -121,7 +121,7 @@ public:
         verticalLayout_3->setStretch(1, 5);
         layoutWidget1 = new QWidget(centralwidget);
         layoutWidget1->setObjectName("layoutWidget1");
-        layoutWidget1->setGeometry(QRect(1130, 130, 662, 611));
+        layoutWidget1->setGeometry(QRect(1130, 50, 662, 691));
         verticalLayout_2 = new QVBoxLayout(layoutWidget1);
         verticalLayout_2->setObjectName("verticalLayout_2");
         verticalLayout_2->setContentsMargins(0, 0, 0, 0);
@@ -150,6 +150,7 @@ public:
         verticalLayout_2->addWidget(tableRessources);
 
         verticalLayout_2->setStretch(0, 1);
+        verticalLayout_2->setStretch(1, 5);
         label_4 = new QLabel(centralwidget);
         label_4->setObjectName("label_4");
         label_4->setGeometry(QRect(710, 280, 381, 41));
@@ -174,7 +175,7 @@ public:
         splitter_2->addWidget(splitter);
         layoutWidget2 = new QWidget(centralwidget);
         layoutWidget2->setObjectName("layoutWidget2");
-        layoutWidget2->setGeometry(QRect(710, 660, 381, 101));
+        layoutWidget2->setGeometry(QRect(700, 660, 401, 101));
         horizontalLayout = new QHBoxLayout(layoutWidget2);
         horizontalLayout->setObjectName("horizontalLayout");
         horizontalLayout->setContentsMargins(0, 0, 0, 0);
@@ -284,7 +285,7 @@ public:
         MainWindow->setStatusBar(statusbar);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 1796, 23));
+        menubar->setGeometry(QRect(0, 0, 1796, 24));
         MainWindow->setMenuBar(menubar);
 
         retranslateUi(MainWindow);
@@ -298,7 +299,7 @@ public:
         pushButton->setText(QCoreApplication::translate("MainWindow", "Retour", nullptr));
         label->setText(QCoreApplication::translate("MainWindow", "Places non publi\303\251es(S\303\251lectionner une place pour l\303\240 publier)", nullptr));
         label_2->setText(QCoreApplication::translate("MainWindow", "Places Publi\303\251es(S\303\251lectionner une place pour l\303\240 d\303\251publier)", nullptr));
-        label_4->setText(QCoreApplication::translate("MainWindow", "Trier les places publi\303\251es par :", nullptr));
+        label_4->setText(QCoreApplication::translate("MainWindow", "Trier les places non publi\303\251es par :", nullptr));
         label_3->setText(QCoreApplication::translate("MainWindow", "Modifier le prix de la place \303\240 publier", nullptr));
         Prix_2->setText(QCoreApplication::translate("MainWindow", "Prix :", nullptr));
         inputPrix->setInputMask(QString());
